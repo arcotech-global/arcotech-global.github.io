@@ -184,7 +184,9 @@ table.case td.after{color:#20cfa3}
 .proof{padding-block:5rem;border-bottom:1px solid var(--line)}
 .proof .head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);gap:3rem;align-items:start}
 .certs{display:flex;gap:.8rem;overflow-x:auto;padding:1.2rem 0 1.4rem;scroll-snap-type:x proximity}
-.certs img{height:200px;width:auto;flex:0 0 auto;border-radius:4px;border:1px solid var(--line);scroll-snap-align:start;background:#fff}
+.certs figure{margin:0;flex:0 0 auto;width:min(260px,70vw);scroll-snap-align:start}
+.certs img{height:200px;width:auto;max-width:100%;border-radius:4px;border:1px solid var(--line);background:#fff}
+.certs figcaption{font-size:.74rem;color:var(--muted);line-height:1.4;margin-top:.5rem;word-break:break-word}
 ul.creds{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.7rem 2rem}
 ul.creds li{position:relative;padding-left:1.6rem;font-size:.95rem;line-height:1.45}
 ul.creds li svg{position:absolute;left:0;top:.2em;width:1rem;height:1rem;color:var(--accent)}
@@ -233,16 +235,16 @@ footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
       <span><b>ARCOTECH</b><small>元核科技</small></span>
     </a>
     <nav class="main" aria-label="Main">
-      <a href="#glance" data-i18n="nav.about">公司介绍</a>
-      <a href="#s1" data-i18n="nav.solutions">解决方案</a>
-      <a href="#s3" data-i18n="nav.products">产品体系</a>
-      <a href="#proof" data-i18n="nav.creds">资质与合作</a>
-      <a href="#global" data-i18n="nav.global">全球业务</a>
-      <a href="#contact" data-i18n="nav.contact">联系我们</a>
+      <a href="#glance">公司介绍</a>
+      <a href="#s1">解决方案</a>
+      <a href="#s3">产品体系</a>
+      <a href="#proof">资质与合作</a>
+      <a href="#global">全球业务</a>
+      <a href="#contact">联系我们</a>
     </nav>
     <div class="langbox">
       <svg class="globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.5 3 14.5 0 18M12 3c-3 3.5-3 14.5 0 18"/></svg>
-      <label for="lang" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)" data-i18n="nav.lang">语言</label>
+      <label for="lang" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">语言</label>
       <select id="lang" aria-label="Language"><option value="zh" selected>中文</option><option value="en">English</option><option value="pt">Português</option><option value="es">Español</option><option value="fr">Français</option><option value="no">Norsk</option><option value="ja">日本語</option><option value="ko">한국어</option></select>
     </div>
   </div>
@@ -252,38 +254,38 @@ footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
 <section class="hero">
   <img class="bg" src="assets/hero.jpg" alt="" width="1600" height="900">
   <div class="wrap">
-    <div class="lbl" data-i18n="hero.eyebrow">面向石油、天然气、石化与化工的 AI 智能运营</div>
-    <h1 class="d" data-i18n="hero.title">为油气行业征服禁区，再造安全与价值的边界</h1>
-    <p data-i18n="hero.sub">防爆机器人、无人机机场与 AI 控制系统，为油气与石化装置提供智能巡检、智能运维与全流程智能控制。</p>
+    <div class="lbl">面向石油、天然气、石化与化工的 AI 智能运营</div>
+    <h1 class="d">为油气行业征服禁区，再造安全与价值的边界</h1>
+    <p>防爆机器人、无人机机场与 AI 控制系统，为油气与石化装置提供智能巡检、智能运维与全流程智能控制。</p>
     <div class="cta">
-      <a class="btn primary" href="#s1" data-i18n="hero.cta1">查看解决方案</a>
-      <a class="btn" href="#global" data-i18n="hero.cta2">洽谈合作</a>
+      <a class="btn primary" href="#s1">查看解决方案</a>
+      <a class="btn" href="#global">洽谈合作</a>
     </div>
-    <div class="co"><span data-i18n="footer.co">元核科技（天津）有限公司</span> · Tianjin, China</div>
+    <div class="co"><span>元核科技（天津）有限公司</span> · Tianjin, China</div>
   </div>
 </section>
 
 <section class="glance" id="glance">
   <div class="wrap">
-    <h2 data-i18n="at.t">三件事，一眼看懂</h2>
+    <h2>三件事，一眼看懂</h2>
     <div class="g3">
       <div>
         <div class="pic"><img src="assets/robot.png" alt="Explosion-proof inspection robot" width="488" height="211"></div>
-        <h3 class="d" data-i18n="pillar1.t">智能巡检</h3>
-        <p class="k" data-i18n="pillar1.k">防爆机器人 · 无人机机场 · 固定哨兵</p>
-        <div class="n"><b class="num" data-i18n="pillar1.n">3–5 秒</b><span data-i18n="pillar1.nl">初期火焰识别</span></div>
+        <h3 class="d">智能巡检</h3>
+        <p class="k">防爆机器人 · 无人机机场 · 固定哨兵</p>
+        <div class="n"><b class="num">3–5 秒</b><span>初期火焰识别</span></div>
       </div>
       <div>
-        <div class="pic"><img class="cover" src="assets/robot-3.jpg" alt="Thermal imaging of rotating equipment"></div>
-        <h3 class="d" data-i18n="pillar2.t">智能运维</h3>
-        <p class="k" data-i18n="pillar2.k">无线振动传感 · 诊断模型 · 运维平台</p>
-        <div class="n"><b class="num" data-i18n="pillar2.n">7×24</b><span data-i18n="pillar2.nl">在线状态监测</span></div>
+        <div class="pic"><img class="cover" src="assets/robot-1.jpg" alt="Inspection robot reading gauges in a process unit"></div>
+        <h3 class="d">智能运维</h3>
+        <p class="k">无线振动传感 · 诊断模型 · 运维平台</p>
+        <div class="n"><b class="num">7×24</b><span>在线状态监测</span></div>
       </div>
       <div>
         <div class="pic"><img class="cover" src="assets/digital-twin.jpg" alt="Digital twin of a process unit"></div>
-        <h3 class="d" data-i18n="pillar3.t">全流程智能控制</h3>
-        <p class="k" data-i18n="pillar3.k">Robust-IPC · 智能 PID · 多变量控制</p>
-        <div class="n"><b class="num" data-i18n="pillar3.n">99%+</b><span data-i18n="pillar3.nl">装置自控率</span></div>
+        <h3 class="d">全流程智能控制</h3>
+        <p class="k">Robust-IPC · 智能 PID · 多变量控制</p>
+        <div class="n"><b class="num">99%+</b><span>装置自控率</span></div>
       </div>
     </div>
   </div>
@@ -292,39 +294,39 @@ footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
 <section class="arch">
   <div class="wrap">
     <div class="head">
-      <h2 class="d" data-i18n="arch.t">一个大脑，三支部队</h2>
-      <p data-i18n="arch.d">油气 AI 大脑汇聚算法库、安全风险图谱与行业数据；地面机器人、固定哨兵与空中舰队把现场数据送回大脑，形成从感知到处置的闭环。</p>
+      <h2 class="d">一个大脑，三支部队</h2>
+      <p>油气 AI 大脑汇聚算法库、安全风险图谱与行业数据；地面机器人、固定哨兵与空中舰队把现场数据送回大脑，形成从感知到处置的闭环。</p>
     </div>
     <div class="schem">
       <div class="col">
-        <p class="ttl" data-i18n="arch.in">现场感知</p>
+        <p class="ttl">现场感知</p>
         <div class="node">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="4" y="9" width="16" height="8" rx="2"/><circle cx="8" cy="19" r="2"/><circle cx="16" cy="19" r="2"/><path d="M12 9V5M9 5h6"/></svg>
-          <div><b data-i18n="s1.l2.t">机器人 · 地面部队</b><span data-i18n="s1.l2.d">深入装置区替代人工进行防爆巡检，采集设备表观、声音、振动、温度与气体浓度数据。</span></div>
+          <div><b>机器人 · 地面部队</b><span>深入装置区替代人工进行防爆巡检，采集设备表观、声音、振动、温度与气体浓度数据。</span></div>
         </div>
         <div class="node">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 3v4M12 21v-4M5 12H3M21 12h-2"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5" fill="currentColor"/></svg>
-          <div><b data-i18n="s1.l3.t">固定哨兵</b><span data-i18n="s1.l3.d">对关键点位进行 7×24 小时生命体征监测，实现秒级异常告警。</span></div>
+          <div><b>固定哨兵</b><span>对关键点位进行 7×24 小时生命体征监测，实现秒级异常告警。</span></div>
         </div>
         <div class="node">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="5" cy="6" r="2.5"/><circle cx="19" cy="6" r="2.5"/><circle cx="5" cy="18" r="2.5"/><circle cx="19" cy="18" r="2.5"/><rect x="9" y="9" width="6" height="6" rx="1"/><path d="M7 7.5l2.5 2.5M17 7.5l-2.5 2.5M7 16.5l2.5-2.5M17 16.5l-2.5-2.5"/></svg>
-          <div><b data-i18n="s1.l4.t">空中舰队</b><span data-i18n="s1.l4.d">快速覆盖全场，进行宏观监测、三维建模与高空设备巡查。</span></div>
+          <div><b>空中舰队</b><span>快速覆盖全场，进行宏观监测、三维建模与高空设备巡查。</span></div>
         </div>
       </div>
       <svg class="wire" viewBox="0 0 72 300" preserveAspectRatio="none" aria-hidden="true"><path d="M0 50 C36 50 36 150 72 150"/><path d="M0 150 L72 150"/><path d="M0 250 C36 250 36 150 72 150"/></svg>
       <div class="brain">
-        <h3 class="d" data-i18n="s1.l1.t">油气 AI 大脑</h3>
-        <p data-i18n="s1.l1.d">算法经验库、安全风险图谱库、场景解决方案库、行业专属数据集与工艺设计方案库。</p>
+        <h3 class="d">油气 AI 大脑</h3>
+        <p>算法经验库、安全风险图谱库、场景解决方案库、行业专属数据集与工艺设计方案库。</p>
         <ul>
-          <li data-i18n="theme3">智保安全</li><li data-i18n="theme2">预测性维护</li><li data-i18n="theme1">信息化升级</li><li data-i18n="theme4">节能降耗</li>
+          <li>智保安全</li><li>预测性维护</li><li>信息化升级</li><li>节能降耗</li>
         </ul>
       </div>
       <svg class="wire back" viewBox="0 0 72 300" preserveAspectRatio="none" aria-hidden="true"><path d="M0 150 C36 150 36 50 72 50"/><path d="M0 150 L72 150"/><path d="M0 150 C36 150 36 250 72 250"/></svg>
       <div class="col">
-        <p class="ttl" data-i18n="arch.out">处置与优化</p>
-        <div class="node out"><div><b data-i18n="arch.o1">秒级安全告警</b><span data-i18n="s1.fire.t">初期火灾智能识别</span></div></div>
-        <div class="node out"><div><b data-i18n="arch.o2">预测性维护</b><span data-i18n="s3.v3">全厂设备全生命周期健康管理</span></div></div>
-        <div class="node out"><div><b data-i18n="arch.o3">全流程智能控制</b><span data-i18n="pillar3.d">Robust-IPC 智能控制系统，从基础 PID 到多变量控制，实现装置安、稳、长、满、优运行。</span></div></div>
+        <p class="ttl">处置与优化</p>
+        <div class="node out"><div><b>秒级安全告警</b><span>初期火灾智能识别</span></div></div>
+        <div class="node out"><div><b>预测性维护</b><span>全厂设备全生命周期健康管理</span></div></div>
+        <div class="node out"><div><b>全流程智能控制</b><span>Robust-IPC 智能控制系统，从基础 PID 到多变量控制，实现装置安、稳、长、满、优运行。</span></div></div>
       </div>
     </div>
   </div>
@@ -334,14 +336,14 @@ footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
   <div class="wrap">
     <div class="pic contain"><img src="assets/robot-ex.jpg" alt="Explosion-proof tracked inspection robot" width="692" height="496" loading="lazy"></div>
     <div class="txt">
-      <p class="lbl" data-i18n="theme3">智保安全</p>
-      <h2 class="d" data-i18n="s1.t">油气全面智保安全体系</h2>
-      <p class="lead" data-i18n="s1.d">以“油气 AI 大脑”为中枢，整合地面、固定与空中三支巡检力量，构建厂区全要素安全感知网络。</p>
-      <ul class="pts"><li data-i18n="s1.c2">大泄漏检测：100 m 外 1 m×1 m 气体泄漏目标自动识别报警。</li><li data-i18n="s1.c3">微小泄漏走航监测：硫化氢、可燃气、氢气、一氧化碳；硫化氢检出下限 <1 ppm，响应 10 秒内。</li><li data-i18n="s1.c1">仪表识别：高清可见光实时捕捉表计图像，数字图像算法智能读数。</li></ul>
-      <details><summary data-i18n="ui.specs">技术参数与细节</summary><div class="in">
-        <p data-i18n="s1.c4">异常噪声分析：随云台转动的高灵敏度拾音器，定向采集设备音频。</p><p data-i18n="s1.c5">异常温度分析：红外测温成像，阈值越限实时报警。</p>
-        <h4 data-i18n="s1.fire.t">初期火灾智能识别</h4><p data-i18n="s1.fire.d">基于亿级火焰特征库与 30 余种火焰识别模型，对罐区、汽车栈台、热油泵、高温管线等关键风险点位 3–5 秒内识别初期火焰，弹窗、声音、短信同步报警，并推送至消防支队与应急救援基地系统。</p>
-        <h4 data-i18n="s1.site.t">作业安全管控</h4><p data-i18n="s1.site.d">承包商全流程智管（人脸识别、RFID、物联网闭环），施工违章 AI 监控（工服、安全帽、动火气瓶距离），电子作业票 + 5G/北斗高精度定位到场签票，三维厂区人员精准定位与历史轨迹回溯。</p>
+      <p class="lbl">智保安全</p>
+      <h2 class="d">油气全面智保安全体系</h2>
+      <p class="lead">以“油气 AI 大脑”为中枢，整合地面、固定与空中三支巡检力量，构建厂区全要素安全感知网络。</p>
+      <ul class="pts"><li>大泄漏检测：100 m 外 1 m×1 m 气体泄漏目标自动识别报警。</li><li>微小泄漏走航监测：硫化氢、可燃气、氢气、一氧化碳；硫化氢检出下限 <1 ppm，响应 10 秒内。</li><li>仪表识别：高清可见光实时捕捉表计图像，数字图像算法智能读数。</li></ul>
+      <details><summary>技术参数与细节</summary><div class="in">
+        <p>异常噪声分析：随云台转动的高灵敏度拾音器，定向采集设备音频。</p><p>异常温度分析：红外测温成像，阈值越限实时报警。</p>
+        <h4>初期火灾智能识别</h4><p>基于亿级火焰特征库与 30 余种火焰识别模型，对罐区、汽车栈台、热油泵、高温管线等关键风险点位 3–5 秒内识别初期火焰，弹窗、声音、短信同步报警，并推送至消防支队与应急救援基地系统。</p>
+        <h4>作业安全管控</h4><p>承包商全流程智管（人脸识别、RFID、物联网闭环），施工违章 AI 监控（工服、安全帽、动火气瓶距离），电子作业票 + 5G/北斗高精度定位到场签票，三维厂区人员精准定位与历史轨迹回溯。</p>
       </div></details>
     </div>
   </div>
@@ -351,12 +353,12 @@ footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
   <div class="wrap">
     <div class="pic white"><img src="assets/drone-dock.jpg" alt="Automated drone dock with aircraft" loading="lazy"></div>
     <div class="txt">
-      <p class="lbl" data-i18n="theme3">智保安全</p>
-      <h2 class="d" data-i18n="s2.t">无人机平台体系</h2>
-      <p class="lead" data-i18n="s2.d">针对油气厂区、采油井场的高温、高粉尘、强电磁干扰环境，提供软硬一体化的无人巡检体系。</p>
-      <ul class="pts"><li data-i18n="s2.b1.d">多旋翼旗舰机型（Mavic 3/4 行业版、M300/M350/M400）与长航时固定翼（HC-526），覆盖近远场、高低空不同作业半径。</li><li data-i18n="s2.b2.d">红外热像、高倍可见光、激光甲烷遥测、LiDAR；支持喊话、应急取水、绳索救援等功能载荷。</li><li data-i18n="s2.b3.d">蜂巢航宇 SU-50PRO 与大疆机场 3 双方案，7×24 小时自动起降、数据回传与自动充电或换电，适配偏远场站与边境管线。</li></ul>
-      <details><summary data-i18n="ui.specs">技术参数与细节</summary><div class="in">
-        <h4 data-i18n="s2.b4.t">算力与对接</h4><p data-i18n="s2.b4.d">边缘 AI 算力集群现场处理，标准化 RESTful API，兼容第三方传感器与企业业务系统（RTMP/RTSP/GB28181、Cloud API）。</p><p data-i18n="s2.use">典型作业：管道焊缝探伤、防腐层完整性检测、管架结构形变巡检。</p>
+      <p class="lbl">智保安全</p>
+      <h2 class="d">无人机平台体系</h2>
+      <p class="lead">针对油气厂区、采油井场的高温、高粉尘、强电磁干扰环境，提供软硬一体化的无人巡检体系。</p>
+      <ul class="pts"><li>多旋翼旗舰机型（Mavic 3/4 行业版、M300/M350/M400）与长航时固定翼（HC-526），覆盖近远场、高低空不同作业半径。</li><li>红外热像、高倍可见光、激光甲烷遥测、LiDAR；支持喊话、应急取水、绳索救援等功能载荷。</li><li>蜂巢航宇 SU-50PRO 与大疆机场 3 双方案，7×24 小时自动起降、数据回传与自动充电或换电，适配偏远场站与边境管线。</li></ul>
+      <details><summary>技术参数与细节</summary><div class="in">
+        <h4>算力与对接</h4><p>边缘 AI 算力集群现场处理，标准化 RESTful API，兼容第三方传感器与企业业务系统（RTMP/RTSP/GB28181、Cloud API）。</p><p>典型作业：管道焊缝探伤、防腐层完整性检测、管架结构形变巡检。</p>
       </div></details>
     </div>
   </div>
@@ -370,27 +372,27 @@ footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
       <img src="assets/robot-3.jpg" alt="Thermal imaging" loading="lazy">
     </div></div>
     <div class="txt">
-      <p class="lbl" data-i18n="theme2">预测性维护</p>
-      <h2 class="d" data-i18n="s3.t">预测性维护</h2>
-      <p class="lead" data-i18n="s3.d">振动机理 + 数理模型的设备故障预测与诊断系统，叠加工艺数理模型诊断工具，覆盖机械磨损、电气故障与工艺变换导致的设备故障。</p>
-      <ul class="pts"><li data-i18n="s3.v1">预测并诊断设备全部故障类型</li><li data-i18n="s3.v3">全厂设备全生命周期健康管理</li><li data-i18n="s3.v4">打通 DCS、MES、EAM、PLM 数据孤岛</li></ul>
-      <details><summary data-i18n="ui.specs">技术参数与细节</summary><div class="in">
-        <h4 data-i18n="s3.sensor.t">FXD11M-Z 无线多功能传感器</h4>
+      <p class="lbl">预测性维护</p>
+      <h2 class="d">预测性维护</h2>
+      <p class="lead">振动机理 + 数理模型的设备故障预测与诊断系统，叠加工艺数理模型诊断工具，覆盖机械磨损、电气故障与工艺变换导致的设备故障。</p>
+      <ul class="pts"><li>预测并诊断设备全部故障类型</li><li>全厂设备全生命周期健康管理</li><li>打通 DCS、MES、EAM、PLM 数据孤岛</li></ul>
+      <details><summary>技术参数与细节</summary><div class="in">
+        <h4>FXD11M-Z 无线多功能传感器</h4>
         <div class="tablewrap"><table class="spec">
-          <tr><th data-i18n="s3.sp1.k">加速度</th><td data-i18n="s3.sp1.v">三轴 MEMS</td></tr>
-          <tr><th data-i18n="s3.sp2.k">频响 (-3 dB)</th><td data-i18n="s3.sp2.v">Z 轴 0.1–10 kHz · XY 0.5–1.6 kHz</td></tr>
-          <tr><th data-i18n="s3.sp3.k">输出</th><td data-i18n="s3.sp3.v">总值、时域波形、定制指标、触发采集</td></tr>
-          <tr><th data-i18n="s3.sp4.k">工作温度</th><td data-i18n="s3.sp4.v">-20 ℃ 至 80 ℃</td></tr>
-          <tr><th data-i18n="s3.sp5.k">无线</th><td data-i18n="s3.sp5.v">IEEE 802.15.4 Zigbee / 蓝牙，无障碍 250 m</td></tr>
-          <tr><th data-i18n="s3.sp6.k">电池</th><td data-i18n="s3.sp6.v">3 年（默认配置）</td></tr>
-          <tr><th data-i18n="s3.sp7.k">尺寸</th><td data-i18n="s3.sp7.v">87 × 42 × 42 mm 长方体，稳定不滚动</td></tr>
+          <tr><th>加速度</th><td>三轴 MEMS</td></tr>
+          <tr><th>频响 (-3 dB)</th><td>Z 轴 0.1–10 kHz · XY 0.5–1.6 kHz</td></tr>
+          <tr><th>输出</th><td>总值、时域波形、定制指标、触发采集</td></tr>
+          <tr><th>工作温度</th><td>-20 ℃ 至 80 ℃</td></tr>
+          <tr><th>无线</th><td>IEEE 802.15.4 Zigbee / 蓝牙，无障碍 250 m</td></tr>
+          <tr><th>电池</th><td>3 年（默认配置）</td></tr>
+          <tr><th>尺寸</th><td>87 × 42 × 42 mm 长方体，稳定不滚动</td></tr>
         </table></div>
-        <h4 data-i18n="s3.wired.t">有线采集站</h4><p data-i18n="s3.wired.d">8/16 高速 IEPE 通道（2.5–50 kHz）、4/8 缓变量通道（4–20 mA）、数字脉冲、音频噪声通道、RS485 Modbus RTU；4M 长波形采集，FFT 谱线 100–102 400；Wi-Fi 配置，断网缓存自动重传。</p>
-        <h4 data-i18n="s3.sw.t">软件平台</h4>
-        <p><b style="color:var(--fg)" data-i18n="s3.sw1.t">AI 设备卫士</b> — <span data-i18n="s3.sw1.d">智能大屏、设备诊断、事件时间轴、报警管理、知识库、周报月报</span></p>
-        <p><b style="color:var(--fg)" data-i18n="s3.sw2.t">巡检助手</b> — <span data-i18n="s3.sw2.d">蓝牙采集、实时指标、红外测温、自动巡检报告</span></p>
-        <p><b style="color:var(--fg)" data-i18n="s3.sw3.t">维保帮手</b> — <span data-i18n="s3.sw3.d">工单管理、设备台账、备件与团队管理、运维分析</span></p>
-        <p data-i18n="s3.int">系统对接：WebAPI、MQTT、iframe 嵌入</p>
+        <h4>有线采集站</h4><p>8/16 高速 IEPE 通道（2.5–50 kHz）、4/8 缓变量通道（4–20 mA）、数字脉冲、音频噪声通道、RS485 Modbus RTU；4M 长波形采集，FFT 谱线 100–102 400；Wi-Fi 配置，断网缓存自动重传。</p>
+        <h4>软件平台</h4>
+        <p><b style="color:var(--fg)">AI 设备卫士</b> — <span>智能大屏、设备诊断、事件时间轴、报警管理、知识库、周报月报</span></p>
+        <p><b style="color:var(--fg)">巡检助手</b> — <span>蓝牙采集、实时指标、红外测温、自动巡检报告</span></p>
+        <p><b style="color:var(--fg)">维保帮手</b> — <span>工单管理、设备台账、备件与团队管理、运维分析</span></p>
+        <p>系统对接：WebAPI、MQTT、iframe 嵌入</p>
       </div></details>
     </div>
   </div>
@@ -400,13 +402,13 @@ footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
   <div class="wrap">
     <div class="pic"><img src="assets/digital-twin.jpg" alt="Digital twin of a process unit" loading="lazy"></div>
     <div class="txt">
-      <p class="lbl" data-i18n="theme1">信息化升级</p>
-      <h2 class="d" data-i18n="s4.t">数字孪生工厂</h2>
-      <p class="lead" data-i18n="s4.d">从建设期数字化交付到运营期全息门户，一个数字底座贯穿工程与生产。</p>
-      <ul class="pts"><li data-i18n="s4.b1">进度管理：一至工序级进度计划，三维模型颜色化展示设计、采购、施工进度；无人机航拍 720° VR 全景按周记录。</li><li data-i18n="s4.o1">生产装置：面向管理者与工程师的穿透式全息门户，实时数据、生产预警、人员定位、应急三维联动。</li><li data-i18n="s4.o2">三维 DCS 交互：虚拟三维工厂 + 二维 DCS 画面 + 实体工厂融合，接入 DCS 实时/历史数据，创新人机界面。</li></ul>
-      <details><summary data-i18n="ui.specs">技术参数与细节</summary><div class="in">
-        <h4 data-i18n="s4.b.t">建设期 · 数字孪生交付</h4><p data-i18n="s4.b2">质量管理：与 4D 精益管道施工系统集成，焊缝与关键阀门法兰可视化，焊接一次合格率实时统计，数据流转至运营期压力管道监检。</p><p data-i18n="s4.b3">施工现场：“天眼 + 地面”视频监控，AI 识别、精准定位与电子围栏管控人员车辆，吊装环境异常入侵报警。</p>
-        <h4 data-i18n="s4.o.t">运营期 · 数字孪生</h4><p data-i18n="s4.o3">内置 BI 工具与 P&ID 交互，多维度数据分类与跨场景分发。</p>
+      <p class="lbl">信息化升级</p>
+      <h2 class="d">数字孪生工厂</h2>
+      <p class="lead">从建设期数字化交付到运营期全息门户，一个数字底座贯穿工程与生产。</p>
+      <ul class="pts"><li>进度管理：一至工序级进度计划，三维模型颜色化展示设计、采购、施工进度；无人机航拍 720° VR 全景按周记录。</li><li>生产装置：面向管理者与工程师的穿透式全息门户，实时数据、生产预警、人员定位、应急三维联动。</li><li>三维 DCS 交互：虚拟三维工厂 + 二维 DCS 画面 + 实体工厂融合，接入 DCS 实时/历史数据，创新人机界面。</li></ul>
+      <details><summary>技术参数与细节</summary><div class="in">
+        <h4>建设期 · 数字孪生交付</h4><p>质量管理：与 4D 精益管道施工系统集成，焊缝与关键阀门法兰可视化，焊接一次合格率实时统计，数据流转至运营期压力管道监检。</p><p>施工现场：“天眼 + 地面”视频监控，AI 识别、精准定位与电子围栏管控人员车辆，吊装环境异常入侵报警。</p>
+        <h4>运营期 · 数字孪生</h4><p>内置 BI 工具与 P&ID 交互，多维度数据分类与跨场景分发。</p>
       </div></details>
     </div>
   </div>
@@ -415,31 +417,32 @@ footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
 <section class="results" id="s5">
   <img class="bg" src="assets/tank-farm.jpg" alt="">
   <div class="wrap">
-    <p class="lbl" data-i18n="theme4">节能降耗</p>
-    <h2 class="d" data-i18n="s5.t">Robust-IPC 全流程智能控制</h2>
-    <p class="sub" data-i18n="s5.d">针对生产过程多变量、强耦合、非线性、大时滞的控制难题，开发具有自主知识产权的从基础控制到多变量控制的一体化解决方案。</p>
+    <p class="lbl">节能降耗</p>
+    <h2 class="d">Robust-IPC 全流程智能控制</h2>
+    <p class="sub">针对生产过程多变量、强耦合、非线性、大时滞的控制难题，开发具有自主知识产权的从基础控制到多变量控制的一体化解决方案。</p>
     <div class="rgrid">
-      <div><b class="num" data-i18n="s5.r1.v">99%+</b><span data-i18n="s5.r1.l">装置自控率</span></div>
-      <div><b class="num" data-i18n="s5.r2.v">98%+</b><span data-i18n="s5.r2.l">控制回路平稳率</span></div>
-      <div><b class="num" data-i18n="s5.r3.v">-20%</b><span data-i18n="s5.r3.l">各回路均方差</span></div>
-      <div><b class="num" data-i18n="s5.r4.v">-80%</b><span data-i18n="s5.r4.l">报警次数</span></div>
+      <div><b class="num">99%+</b><span>装置自控率</span></div>
+      <div><b class="num">98%+</b><span>控制回路平稳率</span></div>
+      <div><b class="num">-20%</b><span>各回路均方差</span></div>
+      <div><b class="num">-80%</b><span>报警次数</span></div>
     </div>
     <div class="tablewrap">
     <table class="case">
-      <caption style="text-align:left;color:#b7c6ce;font-size:.9rem;padding-bottom:.5rem" data-i18n="s5.case.t">能耗案例（综合能耗，kg 标油 / t）</caption>
-      <thead><tr><th data-i18n="s5.case.h1">装置</th><th data-i18n="s5.case.h2">实施前</th><th data-i18n="s5.case.h3">实施后</th></tr></thead>
+      <caption style="text-align:left;color:#b7c6ce;font-size:.9rem;padding-bottom:.5rem">能耗案例（综合能耗，kg 标油 / t）</caption>
+      <thead><tr><th>装置</th><th>实施前</th><th>实施后</th></tr></thead>
       <tbody>
-        <tr><td data-i18n="s5.case.u1">2# 气分装置</td><td class="n num">46.48</td><td class="n num after">42.03</td></tr>
-        <tr><td data-i18n="s5.case.u2">渣油加氢装置</td><td class="n num">17.55</td><td class="n num after">15.26</td></tr>
+        <tr><td>2# 气分装置</td><td class="n num">46.48</td><td class="n num after">42.03</td></tr>
+        <tr><td>渣油加氢装置</td><td class="n num">17.55</td><td class="n num after">15.26</td></tr>
       </tbody>
     </table>
     </div>
-    <p class="note" data-i18n="s5.case.n">2# 气分装置年综合创效约 1 100 万元人民币。</p>
+    <p class="note">2# 气分装置年综合创效约 1 100 万元人民币。</p>
+    <p class="note" style="border-top:1px solid rgba(255,255,255,.18);padding-top:.8rem">以上为 Robust-IPC 在气体分馏、渣油加氢等装置实施项目的统计结果，基线为同装置实施前运行数据；评估口径与项目资料可应要求提供。</p>
     <div class="chips" style="margin:2rem 0 0">
-      <span class="chip" style="border-color:rgba(255,255,255,.3)" data-i18n="s5.ch1">精准建模难</span><span class="chip" style="border-color:rgba(255,255,255,.3)" data-i18n="s5.ch2">精准控制难</span><span class="chip" style="border-color:rgba(255,255,255,.3)" data-i18n="s5.ch3">方案设计难</span><span class="chip" style="border-color:rgba(255,255,255,.3)" data-i18n="s5.ch4">多变量控制难</span><span class="chip" style="border-color:rgba(255,255,255,.3)" data-i18n="s5.ch5">故障诊断难</span>
+      <span class="chip" style="border-color:rgba(255,255,255,.3)">精准建模难</span><span class="chip" style="border-color:rgba(255,255,255,.3)">精准控制难</span><span class="chip" style="border-color:rgba(255,255,255,.3)">方案设计难</span><span class="chip" style="border-color:rgba(255,255,255,.3)">多变量控制难</span><span class="chip" style="border-color:rgba(255,255,255,.3)">故障诊断难</span>
     </div>
-    <p class="note" data-i18n="s5.tech">智能建模 · 智能内模集 PID · IMC / IMC-PID · 多模型控制 · 多变量智能解耦 · 多变量预测控制 · 多目标多约束调控 · 最优控制设计 · 专家系统 · 混合精英圈养优化算法</p>
-    <p class="note" data-i18n="s5.units">适用装置：乙烯、催化裂化、MTO/MTP 及烯烃分离、净化、PP、PE、乙二醇等。</p>
+    <p class="note">智能建模 · 智能内模集 PID · IMC / IMC-PID · 多模型控制 · 多变量智能解耦 · 多变量预测控制 · 多目标多约束调控 · 最优控制设计 · 专家系统 · 混合精英圈养优化算法</p>
+    <p class="note">适用装置：乙烯、催化裂化、MTO/MTP 及烯烃分离、净化、PP、PE、乙二醇等。</p>
   </div>
 </section>
 
@@ -447,32 +450,32 @@ footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
   <div class="wrap">
     <div class="head">
       <div>
-        <h2 class="d" data-i18n="cred.title">资质与合作</h2>
-        <p class="muted" style="margin:.8rem 0 0" data-i18n="cred.kicker">可验证的交付能力</p>
+        <h2 class="d">资质与合作</h2>
+        <p class="muted" style="margin:.8rem 0 0">可验证的交付能力</p>
       </div>
       <ul class="creds">
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="cred1">电子与智能化工程总承包二级资质及安全生产许可证</span></li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="cred2">质量、环境、职业健康安全三体系认证</span></li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="cred3">10 余项主营业务相关软件著作权</span></li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="cred4">与浙江大学共建油气田生产智能装备及控制联合研究中心</span></li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="cred5">与中信开诚重工战略合作，取得中海油市场授权</span></li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="cred6">民用无人驾驶航空器运营合格证</span></li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="cred7">自研防爆消防灭火侦察机器人，主要机型取得防爆认证</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>电子与智能化工程专业承包二级资质（证书号 D212215719，有效期至 2030-03）及安全生产许可证（（津）JZ安许证字[2025]000582）</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>ISO 9001 / 14001 / 45001 三体系认证，北京中润兴认证（CNAS 认可），有效期至 2028-03</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>10 余项主营业务相关软件著作权</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>与浙江大学共建油气田生产智能装备及控制联合研究中心</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>中信重工开诚智能装备有限公司授权经销商（授权书 No. KCSQ20250801）：面向中海油炼化、气电、能源发展等 8 家所属单位推广销售防爆巡检机器人（轮式 / 轨道式 / 履带式）</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>中国民航局民用无人驾驶航空器运营合格证（CAAC · UAOC-0-HQ-20260106048）</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>自研防爆消防灭火侦察机器人 RXB-MC80BD / RXR-MC120BGD，取得防爆合格证（Ex db [ib Gb] IIB T4 Gb，GB/T 3836，有效期至 2031-04）</span></li>
       </ul>
     </div>
-    <p class="lbl" style="margin:2.5rem 0 0" data-i18n="proof.t">证书与资质</p>
+    <p class="lbl" style="margin:2.5rem 0 0">证书与资质</p>
     <div class="certs">
-      <img src="assets/cert-zju.jpg" alt="Zhejiang University joint research centre plaque">
-      <img src="assets/cert-iso-1.jpg" width="150" height="200" alt="Quality management system certificate">
-      <img src="assets/cert-iso-2.jpg" width="150" height="200" alt="Occupational health and safety management certificate">
-      <img src="assets/cert-iso-3.jpg" width="150" height="200" alt="Environmental management system certificate">
-      <img src="assets/cert-ex.jpg" width="150" height="200" alt="Explosion-proof conformity certificate">
-      <img src="assets/cert-uav.jpg" width="150" height="200" alt="Civil UAV operator certificate">
+      <figure><img src="assets/cert-zju.jpg" width="267" height="200" alt="Zhejiang University joint research centre plaque"><figcaption>浙江大学滨海产业技术研究院 · 油气田生产智能装备及控制联合研究中心</figcaption></figure>
+      <figure><img src="assets/cert-iso-1.jpg" width="150" height="200" alt="ISO 9001 quality management system certificate"><figcaption>ISO 9001:2015 质量管理体系 · ZRX (CNAS) · 2025-03-31 → 2028-03-30</figcaption></figure>
+      <figure><img src="assets/cert-iso-2.jpg" width="150" height="200" alt="ISO 45001 occupational health and safety certificate"><figcaption>ISO 45001:2018 职业健康安全管理体系 · ZRX (CNAS) · 2025-03-31 → 2028-03-30</figcaption></figure>
+      <figure><img src="assets/cert-iso-3.jpg" width="150" height="200" alt="ISO 14001 environmental management certificate"><figcaption>ISO 14001:2015 环境管理体系 · ZRX (CNAS) · 2025-03-31 → 2028-03-30</figcaption></figure>
+      <figure><img src="assets/cert-ex.jpg" width="150" height="200" alt="Explosion-proof certificate of conformity"><figcaption>防爆合格证 · 消防灭火侦察机器人 RXB-MC80BD / RXR-MC120BGD · CMExC26.0479 / 0480 · Ex db [ib Gb] IIB T4 Gb · GB/T 3836 · → 2031-04-08</figcaption></figure>
+      <figure><img src="assets/cert-uav.jpg" width="150" height="200" alt="CAAC RPAS air operator certificate"><figcaption>民用无人驾驶航空器运营合格证 · CAAC · UAOC-0-HQ-20260106048</figcaption></figure>
     </div>
     <div class="mvv">
-      <div><h3 data-i18n="mvv.m.t">使命</h3><p data-i18n="mvv.m.d">为石油化工行业提供更安全的工作环境、更和谐的人机协作。</p></div>
-      <div><h3 data-i18n="mvv.v.t">愿景</h3><p data-i18n="mvv.v.d">科技驱动行业升级。</p></div>
-      <div><h3 data-i18n="mvv.c.t">价值观</h3><p data-i18n="mvv.c.d">专注 · 创新 · 合作 · 信用。拒绝削足适履，为客户量体裁衣。</p></div>
+      <div><h3>使命</h3><p>为石油化工行业提供更安全的工作环境、更和谐的人机协作。</p></div>
+      <div><h3>愿景</h3><p>科技驱动行业升级。</p></div>
+      <div><h3>价值观</h3><p>专注 · 创新 · 合作 · 信用。拒绝削足适履，为客户量体裁衣。</p></div>
     </div>
   </div>
 </section>
@@ -480,14 +483,15 @@ footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
 <section class="global" id="global">
   <div class="wrap">
     <div>
-      <p class="lbl" data-i18n="glob.kicker">从天津走向巴西、南美与中东</p>
-      <h2 class="d" style="margin:.6rem 0 1rem" data-i18n="glob.title">全球业务</h2>
-      <p data-i18n="glob.p1">元核科技正将防爆巡检机器人、无人机机场系统、预测性维护与 IPC 智能控制带入海外油气市场，重点面向巴西及南美、中东地区。</p>
-      <p data-i18n="glob.p2">我们优先与当地工程、检验与安全监测企业建立合作，共同服务中资企业海外项目与本地运营商，提供本地化部署、培训与运维支持。</p>
+      <p class="lbl">从天津走向巴西、南美与中东</p>
+      <h2 class="d" style="margin:.6rem 0 1rem">全球业务</h2>
+      <p>元核科技正将防爆巡检机器人、无人机机场系统、预测性维护与 IPC 智能控制带入海外油气市场，重点面向巴西及南美、中东地区。</p>
+      <p>我们优先与当地工程、检验与安全监测企业建立合作，共同服务中资企业海外项目与本地运营商，提供本地化部署、培训与运维支持。</p>
+      <p>我们能为本地伙伴带来：在当地中资油气与化工项目的直接渠道；联合申报研发与示范项目（巴西 ANP 研发条款）；共同推进本地认证路线（INMETRO、ANATEL 及中东各国要求）；以及产品本地化、培训与运维分成的合作模式。</p>
       <div class="steps">
-        <div data-i18n="glob.s1">本地合作伙伴</div><div data-i18n="glob.s2">本地部署与培训</div><div data-i18n="glob.s3">本地运维支持</div>
+        <div>本地合作伙伴</div><div>本地部署与培训</div><div>本地运维支持</div>
       </div>
-      <a class="btn primary" href="#contact" style="margin-top:2rem" data-i18n="glob.cta">洽谈区域合作</a>
+      <a class="btn primary" href="#contact" style="margin-top:2rem">洽谈区域合作</a>
     </div>
     <svg class="route" viewBox="0 0 560 300" aria-hidden="true">
       <circle class="ring" cx="470" cy="80" r="26"/><circle class="ring" cx="470" cy="80" r="40"/>
@@ -497,12 +501,12 @@ footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
       <circle class="hq" cx="470" cy="80" r="7"/>
       <circle class="pt" cx="240" cy="120" r="6"/>
       <circle class="pt" cx="120" cy="210" r="6"/>
-      <text x="470" y="134" text-anchor="middle" data-i18n="glob.hq">天津总部</text>
-      <text x="470" y="152" text-anchor="middle" class="sm" data-i18n="glob.hq.d">研发、制造与交付中心</text>
-      <text x="240" y="100" text-anchor="middle" data-i18n="glob.me">中东</text>
-      <text x="240" y="82" text-anchor="middle" class="sm" data-i18n="glob.me.d">重点拓展区域</text>
-      <text x="120" y="244" text-anchor="middle" data-i18n="glob.br">里约热内卢 · 巴西</text>
-      <text x="120" y="262" text-anchor="middle" class="sm" data-i18n="glob.br.d">全球业务合伙人 — 拉美与葡语市场</text>
+      <text x="470" y="134" text-anchor="middle">天津总部</text>
+      <text x="470" y="152" text-anchor="middle" class="sm">研发、制造与交付中心</text>
+      <text x="240" y="100" text-anchor="middle">中东</text>
+      <text x="240" y="82" text-anchor="middle" class="sm">重点拓展区域</text>
+      <text x="120" y="244" text-anchor="middle">里约热内卢 · 巴西</text>
+      <text x="120" y="262" text-anchor="middle" class="sm">全球业务合伙人 — 拉美与葡语市场</text>
     </svg>
   </div>
 </section>
@@ -510,21 +514,21 @@ footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
 <section class="contact" id="contact">
   <div class="wrap">
     <div>
-      <h2 class="d" data-i18n="contact.title">联系我们</h2>
-      <p class="tag" data-i18n="contact.tag">以人工智能驱动：更高效的工作成果，更安全的工作环境，更和谐的人机协作。</p>
+      <h2 class="d">联系我们</h2>
+      <p class="tag">以人工智能驱动：更高效的工作成果，更安全的工作环境，更和谐的人机协作。</p>
     </div>
     <div class="rows">
-      <div class="row"><span class="k" data-i18n="contact.addr.k">地址</span><span class="v" data-i18n="contact.addr.v">中国天津市东丽区 EOD 总部 14 号楼</span><span></span></div>
-      <div class="row"><span class="k" data-i18n="contact.tel.k">电话</span><span class="v num" style="font-stretch:100%;font-weight:500">+86 133 1209 8502</span><button type="button" data-copy="+8613312098502" data-i18n="contact.copy">复制</button></div>
-      <div class="row"><span class="k" data-i18n="contact.mail.k">邮箱</span><span class="v">meta@arcotech.cn</span><button type="button" data-copy="meta@arcotech.cn" data-i18n="contact.copy">复制</button></div>
+      <div class="row"><span class="k">地址</span><span class="v">中国天津市东丽区 EOD 总部 14 号楼</span><span></span></div>
+      <div class="row"><span class="k">电话</span><span class="v num" style="font-stretch:100%;font-weight:500">+86 133 1209 8502</span><button type="button" data-copy="+8613312098502">复制</button></div>
+      <div class="row"><span class="k">邮箱</span><span class="v">meta@arcotech.cn</span><button type="button" data-copy="meta@arcotech.cn">复制</button></div>
     </div>
   </div>
 </section>
 </main>
 <footer>
   <div class="wrap">
-    <span><span data-i18n="footer.co">元核科技（天津）有限公司</span> · ARCOTECH</span>
-    <span>© 2026 · <span data-i18n="footer.rights">保留所有权利。</span></span>
+    <span>元核科技（天津）有限公司</span>
+    <span>© 2026 · <span>保留所有权利。</span></span>
   </div>
 </footer>
 

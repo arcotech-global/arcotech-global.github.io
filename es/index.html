@@ -6,9 +6,9 @@
 <meta name="description" content="Robots antideflagrantes, docks de drones y sistemas de control con IA para la inspección inteligente, el mantenimiento inteligente y el control inteligente integral del proceso en unidades de petróleo, gas y petroquímica.">
 <link rel="canonical" href="https://arcotech-global.github.io/es/">
 <link rel="alternate" hreflang="zh-CN" href="https://arcotech-global.github.io/"><link rel="alternate" hreflang="en" href="https://arcotech-global.github.io/en/"><link rel="alternate" hreflang="pt-BR" href="https://arcotech-global.github.io/pt/"><link rel="alternate" hreflang="es" href="https://arcotech-global.github.io/es/"><link rel="alternate" hreflang="fr" href="https://arcotech-global.github.io/fr/"><link rel="alternate" hreflang="nb" href="https://arcotech-global.github.io/no/"><link rel="alternate" hreflang="ja" href="https://arcotech-global.github.io/ja/"><link rel="alternate" hreflang="ko" href="https://arcotech-global.github.io/ko/"><link rel="alternate" hreflang="x-default" href="https://arcotech-global.github.io/">
-<meta property="og:type" content="website"><meta property="og:title" content="ARCOTECH · 元核科技"><meta property="og:description" content="Robots antideflagrantes, docks de drones y sistemas de control con IA para la inspección inteligente, el mantenimiento inteligente y el control inteligente integral del proceso en unidades de petróleo, gas y petroquímica."><meta property="og:url" content="https://arcotech-global.github.io/es/"><meta property="og:image" content="https://arcotech-global.github.io/assets/hero.jpg">
+<meta property="og:type" content="website"><meta property="og:title" content="ARCOTECH"><meta property="og:description" content="Robots antideflagrantes, docks de drones y sistemas de control con IA para la inspección inteligente, el mantenimiento inteligente y el control inteligente integral del proceso en unidades de petróleo, gas y petroquímica."><meta property="og:url" content="https://arcotech-global.github.io/es/"><meta property="og:image" content="https://arcotech-global.github.io/assets/hero.jpg">
 <link rel="icon" href="../favicon.png" type="image/png">
-<title>ARCOTECH · 元核科技</title>
+<title>ARCOTECH</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Sans+JP:wght@400;500;700&family=Noto+Sans+KR:wght@400;500;700&display=swap">
@@ -184,7 +184,9 @@ table.case td.after{color:#20cfa3}
 .proof{padding-block:5rem;border-bottom:1px solid var(--line)}
 .proof .head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);gap:3rem;align-items:start}
 .certs{display:flex;gap:.8rem;overflow-x:auto;padding:1.2rem 0 1.4rem;scroll-snap-type:x proximity}
-.certs img{height:200px;width:auto;flex:0 0 auto;border-radius:4px;border:1px solid var(--line);scroll-snap-align:start;background:#fff}
+.certs figure{margin:0;flex:0 0 auto;width:min(260px,70vw);scroll-snap-align:start}
+.certs img{height:200px;width:auto;max-width:100%;border-radius:4px;border:1px solid var(--line);background:#fff}
+.certs figcaption{font-size:.74rem;color:var(--muted);line-height:1.4;margin-top:.5rem;word-break:break-word}
 ul.creds{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.7rem 2rem}
 ul.creds li{position:relative;padding-left:1.6rem;font-size:.95rem;line-height:1.45}
 ul.creds li svg{position:absolute;left:0;top:.2em;width:1rem;height:1rem;color:var(--accent)}
@@ -230,19 +232,19 @@ footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
   <div class="wrap">
     <a class="brand" href="#top" aria-label="ARCOTECH">
       <img src="../assets/logo.png" alt="" width="38" height="38">
-      <span><b>ARCOTECH</b><small>元核科技</small></span>
+      <span><b>ARCOTECH</b><small>Tianjin · China</small></span>
     </a>
     <nav class="main" aria-label="Main">
-      <a href="#glance" data-i18n="nav.about">Empresa</a>
-      <a href="#s1" data-i18n="nav.solutions">Soluciones</a>
-      <a href="#s3" data-i18n="nav.products">Productos</a>
-      <a href="#proof" data-i18n="nav.creds">Credenciales</a>
-      <a href="#global" data-i18n="nav.global">Global</a>
-      <a href="#contact" data-i18n="nav.contact">Contacto</a>
+      <a href="#glance">Empresa</a>
+      <a href="#s1">Soluciones</a>
+      <a href="#s3">Productos</a>
+      <a href="#proof">Credenciales</a>
+      <a href="#global">Global</a>
+      <a href="#contact">Contacto</a>
     </nav>
     <div class="langbox">
       <svg class="globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.5 3 14.5 0 18M12 3c-3 3.5-3 14.5 0 18"/></svg>
-      <label for="lang" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)" data-i18n="nav.lang">Idioma</label>
+      <label for="lang" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Idioma</label>
       <select id="lang" aria-label="Language"><option value="zh">中文</option><option value="en">English</option><option value="pt">Português</option><option value="es" selected>Español</option><option value="fr">Français</option><option value="no">Norsk</option><option value="ja">日本語</option><option value="ko">한국어</option></select>
     </div>
   </div>
@@ -252,38 +254,38 @@ footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
 <section class="hero">
   <img class="bg" src="../assets/hero.jpg" alt="" width="1600" height="900">
   <div class="wrap">
-    <div class="lbl" data-i18n="hero.eyebrow">Operaciones inteligentes con IA para petróleo, gas, petroquímica y química</div>
-    <h1 class="d" data-i18n="hero.title">Operar en las zonas restringidas del petróleo y el gas. Redefinir la frontera entre seguridad y valor.</h1>
-    <p data-i18n="hero.sub">Robots antideflagrantes, docks de drones y sistemas de control con IA para la inspección inteligente, el mantenimiento inteligente y el control inteligente integral del proceso en unidades de petróleo, gas y petroquímica.</p>
+    <div class="lbl">Operaciones inteligentes con IA para petróleo, gas, petroquímica y química</div>
+    <h1 class="d">Operar en las zonas restringidas del petróleo y el gas. Redefinir la frontera entre seguridad y valor.</h1>
+    <p>Robots antideflagrantes, docks de drones y sistemas de control con IA para la inspección inteligente, el mantenimiento inteligente y el control inteligente integral del proceso en unidades de petróleo, gas y petroquímica.</p>
     <div class="cta">
-      <a class="btn primary" href="#s1" data-i18n="hero.cta1">Ver soluciones</a>
-      <a class="btn" href="#global" data-i18n="hero.cta2">Contáctenos</a>
+      <a class="btn primary" href="#s1">Ver soluciones</a>
+      <a class="btn" href="#global">Contáctenos</a>
     </div>
-    <div class="co"><span data-i18n="footer.co">Arcotech (Tianjin) Co., Ltd.</span> · Tianjin, China</div>
+    <div class="co"><span>Arcotech (Tianjin) Co., Ltd.</span> · Tianjin, China</div>
   </div>
 </section>
 
 <section class="glance" id="glance">
   <div class="wrap">
-    <h2 data-i18n="at.t">Qué hacemos, en tres líneas</h2>
+    <h2>Qué hacemos, en tres líneas</h2>
     <div class="g3">
       <div>
         <div class="pic"><img src="../assets/robot.png" alt="Explosion-proof inspection robot" width="488" height="211"></div>
-        <h3 class="d" data-i18n="pillar1.t">Inspección inteligente</h3>
-        <p class="k" data-i18n="pillar1.k">Robots Ex · docks de drones · puntos fijos de monitoreo</p>
-        <div class="n"><b class="num" data-i18n="pillar1.n">3–5 s</b><span data-i18n="pillar1.nl">Detección de llama incipiente</span></div>
+        <h3 class="d">Inspección inteligente</h3>
+        <p class="k">Robots Ex · docks de drones · puntos fijos de monitoreo</p>
+        <div class="n"><b class="num">3–5 s</b><span>Detección de llama incipiente</span></div>
       </div>
       <div>
-        <div class="pic"><img class="cover" src="../assets/robot-3.jpg" alt="Thermal imaging of rotating equipment"></div>
-        <h3 class="d" data-i18n="pillar2.t">Mantenimiento inteligente</h3>
-        <p class="k" data-i18n="pillar2.k">Sensores de vibración inalámbricos · modelos de diagnóstico · plataforma de O&M</p>
-        <div class="n"><b class="num" data-i18n="pillar2.n">24/7</b><span data-i18n="pillar2.nl">Monitoreo de condición en línea</span></div>
+        <div class="pic"><img class="cover" src="../assets/robot-1.jpg" alt="Inspection robot reading gauges in a process unit"></div>
+        <h3 class="d">Mantenimiento inteligente</h3>
+        <p class="k">Sensores de vibración inalámbricos · modelos de diagnóstico · plataforma de O&M</p>
+        <div class="n"><b class="num">24/7</b><span>Monitoreo de condición en línea</span></div>
       </div>
       <div>
         <div class="pic"><img class="cover" src="../assets/digital-twin.jpg" alt="Digital twin of a process unit"></div>
-        <h3 class="d" data-i18n="pillar3.t">Control inteligente integral del proceso</h3>
-        <p class="k" data-i18n="pillar3.k">Robust-IPC · PID inteligente · control multivariable</p>
-        <div class="n"><b class="num" data-i18n="pillar3.n">99%+</b><span data-i18n="pillar3.nl">Tasa de control en automático de la unidad</span></div>
+        <h3 class="d">Control inteligente integral del proceso</h3>
+        <p class="k">Robust-IPC · PID inteligente · control multivariable</p>
+        <div class="n"><b class="num">99%+</b><span>Tasa de control en automático de la unidad</span></div>
       </div>
     </div>
   </div>
@@ -292,71 +294,71 @@ footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
 <section class="arch">
   <div class="wrap">
     <div class="head">
-      <h2 class="d" data-i18n="arch.t">Un cerebro, tres medios de inspección</h2>
-      <p data-i18n="arch.d">El Cerebro de IA para petróleo y gas concentra la biblioteca de algoritmos, el grafo de riesgos y los datos del sector. Los robots terrestres, los puntos fijos de monitoreo y la flota de drones le devuelven los datos de campo y cierran el lazo desde la percepción hasta la respuesta.</p>
+      <h2 class="d">Un cerebro, tres medios de inspección</h2>
+      <p>El Cerebro de IA para petróleo y gas concentra la biblioteca de algoritmos, el grafo de riesgos y los datos del sector. Los robots terrestres, los puntos fijos de monitoreo y la flota de drones le devuelven los datos de campo y cierran el lazo desde la percepción hasta la respuesta.</p>
     </div>
     <div class="schem">
       <div class="col">
-        <p class="ttl" data-i18n="arch.in">Percepción en campo</p>
+        <p class="ttl">Percepción en campo</p>
         <div class="node">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="4" y="9" width="16" height="8" rx="2"/><circle cx="8" cy="19" r="2"/><circle cx="16" cy="19" r="2"/><path d="M12 9V5M9 5h6"/></svg>
-          <div><b data-i18n="s1.l2.t">Robots terrestres</b><span data-i18n="s1.l2.d">Entran en las unidades de proceso en lugar de las personas para inspeccionar en área clasificada, capturando imagen, ruido, vibración, temperatura y concentración de gases de los equipos.</span></div>
+          <div><b>Robots terrestres</b><span>Entran en las unidades de proceso en lugar de las personas para inspeccionar en área clasificada, capturando imagen, ruido, vibración, temperatura y concentración de gases de los equipos.</span></div>
         </div>
         <div class="node">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 3v4M12 21v-4M5 12H3M21 12h-2"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5" fill="currentColor"/></svg>
-          <div><b data-i18n="s1.l3.t">Puntos fijos de monitoreo</b><span data-i18n="s1.l3.d">Monitoreo 24/7 de los parámetros críticos en puntos clave, con alarma de anomalía en segundos.</span></div>
+          <div><b>Puntos fijos de monitoreo</b><span>Monitoreo 24/7 de los parámetros críticos en puntos clave, con alarma de anomalía en segundos.</span></div>
         </div>
         <div class="node">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="5" cy="6" r="2.5"/><circle cx="19" cy="6" r="2.5"/><circle cx="5" cy="18" r="2.5"/><circle cx="19" cy="18" r="2.5"/><rect x="9" y="9" width="6" height="6" rx="1"/><path d="M7 7.5l2.5 2.5M17 7.5l-2.5 2.5M7 16.5l2.5-2.5M17 16.5l-2.5-2.5"/></svg>
-          <div><b data-i18n="s1.l4.t">Flota de drones</b><span data-i18n="s1.l4.d">Cobertura rápida de toda la planta: monitoreo panorámico, modelado 3D e inspección de equipos en altura.</span></div>
+          <div><b>Flota de drones</b><span>Cobertura rápida de toda la planta: monitoreo panorámico, modelado 3D e inspección de equipos en altura.</span></div>
         </div>
       </div>
       <svg class="wire" viewBox="0 0 72 300" preserveAspectRatio="none" aria-hidden="true"><path d="M0 50 C36 50 36 150 72 150"/><path d="M0 150 L72 150"/><path d="M0 250 C36 250 36 150 72 150"/></svg>
       <div class="brain">
-        <h3 class="d" data-i18n="s1.l1.t">Cerebro de IA para petróleo y gas</h3>
-        <p data-i18n="s1.l1.d">Base de conocimiento algorítmico, grafo de riesgos de seguridad, biblioteca de soluciones por escenario, conjuntos de datos del sector y biblioteca de diseños de proceso.</p>
+        <h3 class="d">Cerebro de IA para petróleo y gas</h3>
+        <p>Base de conocimiento algorítmico, grafo de riesgos de seguridad, biblioteca de soluciones por escenario, conjuntos de datos del sector y biblioteca de diseños de proceso.</p>
         <ul>
-          <li data-i18n="theme3">Seguridad inteligente</li><li data-i18n="theme2">Mantenimiento predictivo</li><li data-i18n="theme1">Modernización digital</li><li data-i18n="theme4">Eficiencia energética y reducción de consumos</li>
+          <li>Seguridad inteligente</li><li>Mantenimiento predictivo</li><li>Modernización digital</li><li>Eficiencia energética y reducción de consumos</li>
         </ul>
       </div>
       <svg class="wire back" viewBox="0 0 72 300" preserveAspectRatio="none" aria-hidden="true"><path d="M0 150 C36 150 36 50 72 50"/><path d="M0 150 L72 150"/><path d="M0 150 C36 150 36 250 72 250"/></svg>
       <div class="col">
-        <p class="ttl" data-i18n="arch.out">Respuesta y optimización</p>
-        <div class="node out"><div><b data-i18n="arch.o1">Alarmas de seguridad en segundos</b><span data-i18n="s1.fire.t">Detección inteligente de incendio incipiente</span></div></div>
-        <div class="node out"><div><b data-i18n="arch.o2">Mantenimiento predictivo</b><span data-i18n="s3.v3">Gestionar la salud de todos los equipos de la planta en todo su ciclo de vida</span></div></div>
-        <div class="node out"><div><b data-i18n="arch.o3">Control inteligente integral del proceso</b><span data-i18n="pillar3.d">El sistema de control Robust-IPC, del PID básico al control multivariable, para una operación segura, estable, de ciclo largo, a plena carga y optimizada.</span></div></div>
+        <p class="ttl">Respuesta y optimización</p>
+        <div class="node out"><div><b>Alarmas de seguridad en segundos</b><span>Detección inteligente de incendio incipiente</span></div></div>
+        <div class="node out"><div><b>Mantenimiento predictivo</b><span>Gestionar la salud de todos los equipos de la planta en todo su ciclo de vida</span></div></div>
+        <div class="node out"><div><b>Control inteligente integral del proceso</b><span>El sistema de control Robust-IPC, del PID básico al control multivariable, para una operación segura, estable, de ciclo largo, a plena carga y optimizada.</span></div></div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="band" id="s1">
+<section class="band" id="s2">
   <div class="wrap">
-    <div class="pic contain"><img src="../assets/robot-ex.jpg" alt="Explosion-proof tracked inspection robot" width="692" height="496" loading="lazy"></div>
+    <div class="pic white"><img src="../assets/drone-dock.jpg" alt="Automated drone dock with aircraft" loading="lazy"></div>
     <div class="txt">
-      <p class="lbl" data-i18n="theme3">Seguridad inteligente</p>
-      <h2 class="d" data-i18n="s1.t">Seguridad inteligente integral para petróleo y gas</h2>
-      <p class="lead" data-i18n="s1.d">Con el Cerebro de IA para petróleo y gas en el centro, integra tres medios de inspección (robots terrestres, puntos fijos de monitoreo y flota de drones) en una red de percepción de seguridad que cubre todos los elementos de la planta.</p>
-      <ul class="pts"><li data-i18n="s1.c2">Detección de fugas grandes: reconocimiento y alarma automáticos de una nube de gas de 1 m × 1 m a 100 m de distancia.</li><li data-i18n="s1.c3">Barrido móvil de microfugas: H₂S, gas combustible, hidrógeno y CO; límite de detección de H₂S <1 ppm y respuesta en menos de 10 s.</li><li data-i18n="s1.c1">Lectura de instrumentos: captura en luz visible HD de los indicadores locales y lectura automática mediante algoritmos de imagen.</li></ul>
-      <details><summary data-i18n="ui.specs">Especificaciones técnicas</summary><div class="in">
-        <p data-i18n="s1.c4">Análisis de ruido anómalo: micrófono de alta sensibilidad montado sobre el gimbal para captar audio direccional de los equipos.</p><p data-i18n="s1.c5">Análisis de temperatura anómala: termografía infrarroja con alarma en tiempo real al superar los umbrales.</p>
-        <h4 data-i18n="s1.fire.t">Detección inteligente de incendio incipiente</h4><p data-i18n="s1.fire.d">Una biblioteca de llama con cientos de millones de muestras y más de 30 modelos de reconocimiento detecta la llama incipiente en 3–5 segundos en puntos de riesgo críticos (parques de tanques, cargaderos de camiones cisterna, bombas de aceite caliente y líneas de alta temperatura), con alarma simultánea en pantalla, sonora y por SMS, y envío a la brigada contraincendios y al sistema del centro de respuesta a emergencias.</p>
-        <h4 data-i18n="s1.site.t">Control de seguridad en los trabajos</h4><p data-i18n="s1.site.d">Gestión integral de contratistas (reconocimiento facial, RFID, ciclo cerrado IoT); detección por IA de incumplimientos de seguridad en campo (ropa de trabajo, casco, distancia de cilindros de gas en trabajos en caliente); permiso de trabajo electrónico (PT) con firma en sitio verificada por posicionamiento de alta precisión 5G/BeiDou; localización precisa del personal y reproducción de trayectorias en el modelo 3D de la planta.</p>
+      <p class="lbl">Seguridad inteligente</p>
+      <h2 class="d">Plataforma de drones</h2>
+      <p class="lead">Sistema integrado de inspección no tripulada (hardware y software) para los entornos de alta temperatura, polvo e interferencia electromagnética de las plantas de petróleo y gas y las locaciones de pozos.</p>
+      <ul class="pts"><li>Plataformas multirrotor de grado industrial y una aeronave de ala fija de gran autonomía (HC-526), que cubren campo cercano y lejano a baja y alta altitud.</li><li>Cámara térmica, luz visible con zoom de largo alcance, detección remota de metano por láser y LiDAR; además, altavoz, muestreo de agua de emergencia y lanzamiento de cuerda de rescate.</li><li>Dos configuraciones de dock para despegue y aterrizaje automáticos 24/7, transmisión de datos y recarga automática o cambio de batería; aptas para estaciones remotas y ductos en zonas fronterizas. La programación del dock y la analítica de IA son de Arcotech.</li></ul>
+      <details><summary>Especificaciones técnicas</summary><div class="in">
+        <h4>Cómputo e integración</h4><p>Clúster de cómputo de IA en el borde (edge) para procesamiento in situ, API RESTful estándar y compatibilidad con sensores de terceros y sistemas corporativos (RTMP/RTSP/GB28181, Cloud API).</p><p>Tareas típicas: inspección de soldaduras en tuberías, integridad del recubrimiento anticorrosivo y deformación estructural de puentes de tuberías (pipe racks).</p>
       </div></details>
     </div>
   </div>
 </section>
 
-<section class="band flip" id="s2">
+<section class="band flip" id="s1">
   <div class="wrap">
-    <div class="pic white"><img src="../assets/drone-dock.jpg" alt="Automated drone dock with aircraft" loading="lazy"></div>
+    <div class="pic contain"><img src="../assets/robot-ex.jpg" alt="Explosion-proof tracked inspection robot" width="692" height="496" loading="lazy"></div>
     <div class="txt">
-      <p class="lbl" data-i18n="theme3">Seguridad inteligente</p>
-      <h2 class="d" data-i18n="s2.t">Plataforma de drones</h2>
-      <p class="lead" data-i18n="s2.d">Sistema integrado de inspección no tripulada (hardware y software) para los entornos de alta temperatura, polvo e interferencia electromagnética de las plantas de petróleo y gas y las locaciones de pozos.</p>
-      <ul class="pts"><li data-i18n="s2.b1.d">Multirrotores de gama alta (Mavic 3/4 Enterprise, M300/M350/M400) y el ala fija de gran autonomía HC-526, para campo cercano y lejano a baja y alta altitud.</li><li data-i18n="s2.b2.d">Cámara térmica, luz visible con zoom de largo alcance, detección remota de metano por láser y LiDAR; además, altavoz, muestreo de agua de emergencia y lanzamiento de cuerda de rescate.</li><li data-i18n="s2.b3.d">Dos opciones, Fengchao SU-50PRO y DJI Dock 3, con despegue y aterrizaje automáticos 24/7, transmisión de datos y recarga automática o cambio de batería; aptos para estaciones remotas y ductos en zonas fronterizas.</li></ul>
-      <details><summary data-i18n="ui.specs">Especificaciones técnicas</summary><div class="in">
-        <h4 data-i18n="s2.b4.t">Cómputo e integración</h4><p data-i18n="s2.b4.d">Clúster de cómputo de IA en el borde (edge) para procesamiento in situ, API RESTful estándar y compatibilidad con sensores de terceros y sistemas corporativos (RTMP/RTSP/GB28181, Cloud API).</p><p data-i18n="s2.use">Tareas típicas: inspección de soldaduras en tuberías, integridad del recubrimiento anticorrosivo y deformación estructural de puentes de tuberías (pipe racks).</p>
+      <p class="lbl">Seguridad inteligente</p>
+      <h2 class="d">Seguridad inteligente integral para petróleo y gas</h2>
+      <p class="lead">Con el Cerebro de IA para petróleo y gas en el centro, integra tres medios de inspección (robots terrestres, puntos fijos de monitoreo y flota de drones) en una red de percepción de seguridad que cubre todos los elementos de la planta.</p>
+      <ul class="pts"><li>Detección de fugas grandes: reconocimiento y alarma automáticos de una nube de gas de 1 m × 1 m a 100 m de distancia.</li><li>Barrido móvil de microfugas: H₂S, gas combustible, hidrógeno y CO; límite de detección de H₂S <1 ppm y respuesta en menos de 10 s.</li><li>Lectura de instrumentos: captura en luz visible HD de los indicadores locales y lectura automática mediante algoritmos de imagen.</li></ul>
+      <details><summary>Especificaciones técnicas</summary><div class="in">
+        <p>Análisis de ruido anómalo: micrófono de alta sensibilidad montado sobre el gimbal para captar audio direccional de los equipos.</p><p>Análisis de temperatura anómala: termografía infrarroja con alarma en tiempo real al superar los umbrales.</p>
+        <h4>Detección inteligente de incendio incipiente</h4><p>Una biblioteca de llama con cientos de millones de muestras y más de 30 modelos de reconocimiento detecta la llama incipiente en 3–5 segundos en puntos de riesgo críticos (parques de tanques, cargaderos de camiones cisterna, bombas de aceite caliente y líneas de alta temperatura), con alarma simultánea en pantalla, sonora y por SMS, y envío a la brigada contraincendios y al sistema del centro de respuesta a emergencias.</p>
+        <h4>Control de seguridad en los trabajos</h4><p>Gestión integral de contratistas (reconocimiento facial, RFID, ciclo cerrado IoT); detección por IA de incumplimientos de seguridad en campo (ropa de trabajo, casco, distancia de cilindros de gas en trabajos en caliente); permiso de trabajo electrónico (PT) con firma en sitio verificada por posicionamiento de alta precisión 5G/BeiDou; localización precisa del personal y reproducción de trayectorias en el modelo 3D de la planta.</p>
       </div></details>
     </div>
   </div>
@@ -370,27 +372,27 @@ footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
       <img src="../assets/robot-3.jpg" alt="Thermal imaging" loading="lazy">
     </div></div>
     <div class="txt">
-      <p class="lbl" data-i18n="theme2">Mantenimiento predictivo</p>
-      <h2 class="d" data-i18n="s3.t">Mantenimiento predictivo</h2>
-      <p class="lead" data-i18n="s3.d">Sistema de predicción y diagnóstico de fallas que combina el análisis de vibraciones por mecanismo de falla con modelos matemáticos, ampliado con herramientas de diagnóstico basadas en modelos del proceso para cubrir desgaste mecánico, fallas eléctricas y fallas originadas por cambios de proceso.</p>
-      <ul class="pts"><li data-i18n="s3.v1">Predecir y diagnosticar todo tipo de fallas en los equipos</li><li data-i18n="s3.v3">Gestionar la salud de todos los equipos de la planta en todo su ciclo de vida</li><li data-i18n="s3.v4">Eliminar los silos de datos entre DCS, MES, EAM y PLM</li></ul>
-      <details><summary data-i18n="ui.specs">Especificaciones técnicas</summary><div class="in">
-        <h4 data-i18n="s3.sensor.t">Sensor inalámbrico multifunción FXD11M-Z</h4>
+      <p class="lbl">Mantenimiento predictivo</p>
+      <h2 class="d">Mantenimiento predictivo</h2>
+      <p class="lead">Sistema de predicción y diagnóstico de fallas que combina el análisis de vibraciones por mecanismo de falla con modelos matemáticos, ampliado con herramientas de diagnóstico basadas en modelos del proceso para cubrir desgaste mecánico, fallas eléctricas y fallas originadas por cambios de proceso.</p>
+      <ul class="pts"><li>Predecir y diagnosticar todo tipo de fallas en los equipos</li><li>Gestionar la salud de todos los equipos de la planta en todo su ciclo de vida</li><li>Eliminar los silos de datos entre DCS, MES, EAM y PLM</li></ul>
+      <details><summary>Especificaciones técnicas</summary><div class="in">
+        <h4>Sensor inalámbrico multifunción FXD11M-Z</h4>
         <div class="tablewrap"><table class="spec">
-          <tr><th data-i18n="s3.sp1.k">Acelerómetro</th><td data-i18n="s3.sp1.v">MEMS triaxial</td></tr>
-          <tr><th data-i18n="s3.sp2.k">Respuesta en frecuencia (-3 dB)</th><td data-i18n="s3.sp2.v">Z 0,1–10 kHz · XY 0,5–1,6 kHz</td></tr>
-          <tr><th data-i18n="s3.sp3.k">Salida</th><td data-i18n="s3.sp3.v">Valor global, forma de onda temporal, indicadores personalizados, adquisición por disparo</td></tr>
-          <tr><th data-i18n="s3.sp4.k">Temperatura de operación</th><td data-i18n="s3.sp4.v">-20 °C a 80 °C</td></tr>
-          <tr><th data-i18n="s3.sp5.k">Conectividad</th><td data-i18n="s3.sp5.v">IEEE 802.15.4 Zigbee / Bluetooth, 250 m en línea de vista</td></tr>
-          <tr><th data-i18n="s3.sp6.k">Batería</th><td data-i18n="s3.sp6.v">3 años (configuración por defecto)</td></tr>
-          <tr><th data-i18n="s3.sp7.k">Dimensiones</th><td data-i18n="s3.sp7.v">Bloque de 87 × 42 × 42 mm, estable y que no rueda</td></tr>
+          <tr><th>Acelerómetro</th><td>MEMS triaxial</td></tr>
+          <tr><th>Respuesta en frecuencia (-3 dB)</th><td>Z 0,1–10 kHz · XY 0,5–1,6 kHz</td></tr>
+          <tr><th>Salida</th><td>Valor global, forma de onda temporal, indicadores personalizados, adquisición por disparo</td></tr>
+          <tr><th>Temperatura de operación</th><td>-20 °C a 80 °C</td></tr>
+          <tr><th>Conectividad</th><td>IEEE 802.15.4 Zigbee / Bluetooth, 250 m en línea de vista</td></tr>
+          <tr><th>Batería</th><td>3 años (configuración por defecto)</td></tr>
+          <tr><th>Dimensiones</th><td>Bloque de 87 × 42 × 42 mm, estable y que no rueda</td></tr>
         </table></div>
-        <h4 data-i18n="s3.wired.t">Estación de adquisición cableada</h4><p data-i18n="s3.wired.d">8/16 canales IEPE de alta velocidad (2,5–50 kHz), 4/8 entradas analógicas 4–20 mA (variables lentas), canal de pulsos digital y canal de ruido acústico, RS485 Modbus RTU; formas de onda largas de 4M muestras con 100–102 400 líneas de FFT; configuración por Wi-Fi y almacenamiento local con reenvío automático ante pérdida de red.</p>
-        <h4 data-i18n="s3.sw.t">Plataforma de software</h4>
-        <p><b style="color:var(--fg)" data-i18n="s3.sw1.t">Guardián de equipos IA</b> — <span data-i18n="s3.sw1.d">Tablero general y por equipo, diagnóstico, cronología de eventos, gestión de alarmas, base de conocimiento, informes semanales y mensuales</span></p>
-        <p><b style="color:var(--fg)" data-i18n="s3.sw2.t">Asistente de inspección</b> — <span data-i18n="s3.sw2.d">Adquisición por Bluetooth, indicadores en tiempo real, medición de temperatura por infrarrojo, informes de inspección automáticos</span></p>
-        <p><b style="color:var(--fg)" data-i18n="s3.sw3.t">Gestor de mantenimiento</b> — <span data-i18n="s3.sw3.d">Órdenes de trabajo, registro maestro de equipos, gestión de repuestos y cuadrillas, analítica de O&M</span></p>
-        <p data-i18n="s3.int">Integración: WebAPI, MQTT e incrustación por iframe</p>
+        <h4>Estación de adquisición cableada</h4><p>8/16 canales IEPE de alta velocidad (2,5–50 kHz), 4/8 entradas analógicas 4–20 mA (variables lentas), canal de pulsos digital y canal de ruido acústico, RS485 Modbus RTU; formas de onda largas de 4M muestras con 100–102 400 líneas de FFT; configuración por Wi-Fi y almacenamiento local con reenvío automático ante pérdida de red.</p>
+        <h4>Plataforma de software</h4>
+        <p><b style="color:var(--fg)">Guardián de equipos IA</b> — <span>Tablero general y por equipo, diagnóstico, cronología de eventos, gestión de alarmas, base de conocimiento, informes semanales y mensuales</span></p>
+        <p><b style="color:var(--fg)">Asistente de inspección</b> — <span>Adquisición por Bluetooth, indicadores en tiempo real, medición de temperatura por infrarrojo, informes de inspección automáticos</span></p>
+        <p><b style="color:var(--fg)">Gestor de mantenimiento</b> — <span>Órdenes de trabajo, registro maestro de equipos, gestión de repuestos y cuadrillas, analítica de O&M</span></p>
+        <p>Integración: WebAPI, MQTT e incrustación por iframe</p>
       </div></details>
     </div>
   </div>
@@ -400,13 +402,13 @@ footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
   <div class="wrap">
     <div class="pic"><img src="../assets/digital-twin.jpg" alt="Digital twin of a process unit" loading="lazy"></div>
     <div class="txt">
-      <p class="lbl" data-i18n="theme1">Modernización digital</p>
-      <h2 class="d" data-i18n="s4.t">Planta con gemelo digital</h2>
-      <p class="lead" data-i18n="s4.d">Una única base digital, desde la entrega digital en la fase de construcción hasta el portal holográfico en la fase de operación.</p>
-      <ul class="pts"><li data-i18n="s4.b1">Programación: planes desde el nivel 1 hasta el nivel de actividad; avance de ingeniería, procura y construcción codificado por color en el modelo 3D; panorámicas VR de 720° semanales capturadas con dron.</li><li data-i18n="s4.o1">Unidades de proceso: portal holográfico con navegación por niveles (drill-down) para directivos e ingenieros, con datos en tiempo real, alertas tempranas de producción, localización del personal y respuesta a emergencias vinculadas al modelo 3D.</li><li data-i18n="s4.o2">Integración 3D–DCS: la planta virtual 3D, los gráficos 2D del DCS y la planta física se fusionan, con los datos en tiempo real e históricos del DCS, en una nueva interfaz hombre-máquina (HMI).</li></ul>
-      <details><summary data-i18n="ui.specs">Especificaciones técnicas</summary><div class="in">
-        <h4 data-i18n="s4.b.t">Construcción · entrega del gemelo digital</h4><p data-i18n="s4.b2">Calidad: integración con el sistema 4D de construcción lean de tuberías; soldaduras, válvulas y bridas críticas visualizadas; índice de aceptación de soldaduras a la primera en tiempo real; los datos se transfieren a la inspección reglamentaria de tubería a presión en operación.</p><p data-i18n="s4.b3">Obra: videovigilancia aérea y terrestre; reconocimiento por IA, posicionamiento preciso y geocercas para personas y vehículos; alarma de intrusión en el perímetro de las maniobras de izaje.</p>
-        <h4 data-i18n="s4.o.t">Operación · gemelo digital</h4><p data-i18n="s4.o3">Herramientas de BI integradas e interacción con P&ID/DTI, clasificación multidimensional de datos y distribución entre escenarios.</p>
+      <p class="lbl">Modernización digital</p>
+      <h2 class="d">Planta con gemelo digital</h2>
+      <p class="lead">Una única base digital, desde la entrega digital en la fase de construcción hasta el portal holográfico en la fase de operación.</p>
+      <ul class="pts"><li>Programación: planes desde el nivel 1 hasta el nivel de actividad; avance de ingeniería, procura y construcción codificado por color en el modelo 3D; panorámicas VR de 720° semanales capturadas con dron.</li><li>Unidades de proceso: portal holográfico con navegación por niveles (drill-down) para directivos e ingenieros, con datos en tiempo real, alertas tempranas de producción, localización del personal y respuesta a emergencias vinculadas al modelo 3D.</li><li>Integración 3D–DCS: la planta virtual 3D, los gráficos 2D del DCS y la planta física se fusionan, con los datos en tiempo real e históricos del DCS, en una nueva interfaz hombre-máquina (HMI).</li></ul>
+      <details><summary>Especificaciones técnicas</summary><div class="in">
+        <h4>Construcción · entrega del gemelo digital</h4><p>Calidad: integración con el sistema 4D de construcción lean de tuberías; soldaduras, válvulas y bridas críticas visualizadas; índice de aceptación de soldaduras a la primera en tiempo real; los datos se transfieren a la inspección reglamentaria de tubería a presión en operación.</p><p>Obra: videovigilancia aérea y terrestre; reconocimiento por IA, posicionamiento preciso y geocercas para personas y vehículos; alarma de intrusión en el perímetro de las maniobras de izaje.</p>
+        <h4>Operación · gemelo digital</h4><p>Herramientas de BI integradas e interacción con P&ID/DTI, clasificación multidimensional de datos y distribución entre escenarios.</p>
       </div></details>
     </div>
   </div>
@@ -415,31 +417,32 @@ footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
 <section class="results" id="s5">
   <img class="bg" src="../assets/tank-farm.jpg" alt="">
   <div class="wrap">
-    <p class="lbl" data-i18n="theme4">Eficiencia energética y reducción de consumos</p>
-    <h2 class="d" data-i18n="s5.t">Robust-IPC: control inteligente integral del proceso</h2>
-    <p class="sub" data-i18n="s5.d">Solución integrada con propiedad intelectual propia, del control regulatorio básico al multivariable, para procesos multivariables, fuertemente acoplados, no lineales y con tiempos muertos grandes.</p>
+    <p class="lbl">Eficiencia energética y reducción de consumos</p>
+    <h2 class="d">Robust-IPC: control inteligente integral del proceso</h2>
+    <p class="sub">Solución integrada con propiedad intelectual propia, del control regulatorio básico al multivariable, para procesos multivariables, fuertemente acoplados, no lineales y con tiempos muertos grandes.</p>
     <div class="rgrid">
-      <div><b class="num" data-i18n="s5.r1.v">99%+</b><span data-i18n="s5.r1.l">Lazos en automático de la unidad</span></div>
-      <div><b class="num" data-i18n="s5.r2.v">98%+</b><span data-i18n="s5.r2.l">Lazos de control estables</span></div>
-      <div><b class="num" data-i18n="s5.r3.v">-20%</b><span data-i18n="s5.r3.l">Desviación estándar de la PV por lazo</span></div>
-      <div><b class="num" data-i18n="s5.r4.v">-80%</b><span data-i18n="s5.r4.l">Número de alarmas</span></div>
+      <div><b class="num">99%+</b><span>Lazos en automático de la unidad</span></div>
+      <div><b class="num">98%+</b><span>Lazos de control estables</span></div>
+      <div><b class="num">-20%</b><span>Desviación estándar de la PV por lazo</span></div>
+      <div><b class="num">-80%</b><span>Número de alarmas</span></div>
     </div>
     <div class="tablewrap">
     <table class="case">
-      <caption style="text-align:left;color:#b7c6ce;font-size:.9rem;padding-bottom:.5rem" data-i18n="s5.case.t">Caso de ahorro energético (consumo energético específico, kg de petróleo equivalente / t)</caption>
-      <thead><tr><th data-i18n="s5.case.h1">Unidad</th><th data-i18n="s5.case.h2">Antes</th><th data-i18n="s5.case.h3">Después</th></tr></thead>
+      <caption style="text-align:left;color:#b7c6ce;font-size:.9rem;padding-bottom:.5rem">Caso de ahorro energético (consumo energético específico, kg de petróleo equivalente / t)</caption>
+      <thead><tr><th>Unidad</th><th>Antes</th><th>Después</th></tr></thead>
       <tbody>
-        <tr><td data-i18n="s5.case.u1">Unidad de fraccionamiento de gas n.º 2</td><td class="n num">46.48</td><td class="n num after">42.03</td></tr>
-        <tr><td data-i18n="s5.case.u2">Unidad de hidrotratamiento de residuos</td><td class="n num">17.55</td><td class="n num after">15.26</td></tr>
+        <tr><td>Unidad de fraccionamiento de gas n.º 2</td><td class="n num">46.48</td><td class="n num after">42.03</td></tr>
+        <tr><td>Unidad de hidrotratamiento de residuos</td><td class="n num">17.55</td><td class="n num after">15.26</td></tr>
       </tbody>
     </table>
     </div>
-    <p class="note" data-i18n="s5.case.n">Beneficio económico anual en la unidad de fraccionamiento de gas n.º 2: unos 11 millones de RMB.</p>
+    <p class="note">Beneficio económico anual en la unidad de fraccionamiento de gas n.º 2: unos 11 millones de RMB.</p>
+    <p class="note" style="border-top:1px solid rgba(255,255,255,.18);padding-top:.8rem">Cifras de proyectos Robust-IPC en unidades de fraccionamiento de gas e hidrotratamiento de residuo; la línea base son los datos operativos de la misma unidad antes de la implantación. Método de evaluación y registros de proyecto disponibles a solicitud.</p>
     <div class="chips" style="margin:2rem 0 0">
-      <span class="chip" style="border-color:rgba(255,255,255,.3)" data-i18n="s5.ch1">Modelado preciso</span><span class="chip" style="border-color:rgba(255,255,255,.3)" data-i18n="s5.ch2">Control preciso</span><span class="chip" style="border-color:rgba(255,255,255,.3)" data-i18n="s5.ch3">Diseño de la estrategia de control</span><span class="chip" style="border-color:rgba(255,255,255,.3)" data-i18n="s5.ch4">Control multivariable</span><span class="chip" style="border-color:rgba(255,255,255,.3)" data-i18n="s5.ch5">Diagnóstico de fallas</span>
+      <span class="chip" style="border-color:rgba(255,255,255,.3)">Modelado preciso</span><span class="chip" style="border-color:rgba(255,255,255,.3)">Control preciso</span><span class="chip" style="border-color:rgba(255,255,255,.3)">Diseño de la estrategia de control</span><span class="chip" style="border-color:rgba(255,255,255,.3)">Control multivariable</span><span class="chip" style="border-color:rgba(255,255,255,.3)">Diagnóstico de fallas</span>
     </div>
-    <p class="note" data-i18n="s5.tech">Modelado inteligente · PID inteligente con conjunto de modelos internos · IMC / IMC-PID · control multimodelo · desacoplamiento inteligente multivariable · control predictivo multivariable · regulación multiobjetivo con restricciones múltiples · diseño de control óptimo · sistema experto · algoritmo híbrido de optimización elitista</p>
-    <p class="note" data-i18n="s5.units">Unidades aplicables: etileno, FCC, MTO/MTP y separación de olefinas, purificación de gas, PP, PE, MEG, entre otras.</p>
+    <p class="note">Modelado inteligente · PID inteligente con conjunto de modelos internos · IMC / IMC-PID · control multimodelo · desacoplamiento inteligente multivariable · control predictivo multivariable · regulación multiobjetivo con restricciones múltiples · diseño de control óptimo · sistema experto · algoritmo híbrido de optimización elitista</p>
+    <p class="note">Unidades aplicables: etileno, FCC, MTO/MTP y separación de olefinas, purificación de gas, PP, PE, MEG, entre otras.</p>
   </div>
 </section>
 
@@ -447,32 +450,32 @@ footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
   <div class="wrap">
     <div class="head">
       <div>
-        <h2 class="d" data-i18n="cred.title">Credenciales y alianzas</h2>
-        <p class="muted" style="margin:.8rem 0 0" data-i18n="cred.kicker">Capacidad de ejecución comprobable</p>
+        <h2 class="d">Credenciales y alianzas</h2>
+        <p class="muted" style="margin:.8rem 0 0">Capacidad de ejecución comprobable</p>
       </div>
       <ul class="creds">
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="cred1">Calificación de contratista general de grado II en ingeniería electrónica e inteligente y Licencia de Seguridad en la Producción (China)</span></li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="cred2">Certificación de los tres sistemas de gestión: calidad, ambiental y seguridad y salud en el trabajo</span></li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="cred3">Más de 10 registros de derechos de autor de software (China) vinculados al negocio principal</span></li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="cred4">Centro de investigación conjunto con la Universidad de Zhejiang en equipos inteligentes y control para la producción en campos de petróleo y gas</span></li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="cred5">Cooperación estratégica con CITIC Kaicheng Heavy Industry, con autorización de canal para el mercado de CNOOC</span></li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="cred6">Certificado de operador de aeronaves no tripuladas civiles (CAAC, China)</span></li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="cred7">Robot contraincendios antideflagrante de reconocimiento y extinción de desarrollo propio; modelos principales con certificación Ex (China)</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Calificación de contratista especializado grado II en ingeniería electrónica e inteligente (China, n.º D212215719, válida hasta 2030-03) y Licencia de Seguridad en la Producción ((津)JZ安许证字[2025]000582)</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Sistemas de gestión ISO 9001 / 14001 / 45001 certificados por Beijing ZhongRunXing (acreditada por CNAS), válidos hasta 2028-03</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Más de 10 registros de derechos de autor de software (China) vinculados al negocio principal</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Centro de investigación conjunto con la Universidad de Zhejiang en equipos inteligentes y control para la producción en campos de petróleo y gas</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Distribuidor autorizado de CITIC HIC Kaicheng Intelligence Equipment (carta n.º KCSQ20250801) para robots de inspección antideflagrantes (de ruedas, sobre riel y de orugas) ante ocho empresas del grupo CNOOC, entre ellas CNOOC Refining & Chemicals y CNOOC Gas & Power</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Certificado de operador aéreo de aeronaves pilotadas a distancia emitido por la CAAC (CAAC · UAOC-0-HQ-20260106048)</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Robots contraincendios y de reconocimiento antideflagrantes de desarrollo propio RXB-MC80BD / RXR-MC120BGD, certificados Ex en China (Ex db [ib Gb] IIB T4 Gb, GB/T 3836, vigente hasta 2031-04)</span></li>
       </ul>
     </div>
-    <p class="lbl" style="margin:2.5rem 0 0" data-i18n="proof.t">Certificados y habilitaciones</p>
+    <p class="lbl" style="margin:2.5rem 0 0">Certificados y habilitaciones</p>
     <div class="certs">
-      <img src="../assets/cert-zju.jpg" alt="Zhejiang University joint research centre plaque">
-      <img src="../assets/cert-iso-1.jpg" width="150" height="200" alt="Quality management system certificate">
-      <img src="../assets/cert-iso-2.jpg" width="150" height="200" alt="Occupational health and safety management certificate">
-      <img src="../assets/cert-iso-3.jpg" width="150" height="200" alt="Environmental management system certificate">
-      <img src="../assets/cert-ex.jpg" width="150" height="200" alt="Explosion-proof conformity certificate">
-      <img src="../assets/cert-uav.jpg" width="150" height="200" alt="Civil UAV operator certificate">
+      <figure><img src="../assets/cert-zju.jpg" width="267" height="200" alt="Zhejiang University joint research centre plaque"><figcaption>Instituto de Tecnología Industrial Binhai de la Universidad de Zhejiang · centro conjunto de investigación en equipos inteligentes y control para producción de petróleo y gas</figcaption></figure>
+      <figure><img src="../assets/cert-iso-1.jpg" width="150" height="200" alt="ISO 9001 quality management system certificate"><figcaption>ISO 9001:2015 gestión de la calidad · ZRX (CNAS) · 2025-03-31 → 2028-03-30</figcaption></figure>
+      <figure><img src="../assets/cert-iso-2.jpg" width="150" height="200" alt="ISO 45001 occupational health and safety certificate"><figcaption>ISO 45001:2018 seguridad y salud en el trabajo · ZRX (CNAS) · 2025-03-31 → 2028-03-30</figcaption></figure>
+      <figure><img src="../assets/cert-iso-3.jpg" width="150" height="200" alt="ISO 14001 environmental management certificate"><figcaption>ISO 14001:2015 gestión ambiental · ZRX (CNAS) · 2025-03-31 → 2028-03-30</figcaption></figure>
+      <figure><img src="../assets/cert-ex.jpg" width="150" height="200" alt="Explosion-proof certificate of conformity"><figcaption>Certificado de conformidad Ex · robots contraincendios y de reconocimiento RXB-MC80BD / RXR-MC120BGD · CMExC26.0479 / 0480 · Ex db [ib Gb] IIB T4 Gb · GB/T 3836 · → 2031-04-08</figcaption></figure>
+      <figure><img src="../assets/cert-uav.jpg" width="150" height="200" alt="CAAC RPAS air operator certificate"><figcaption>Certificado de operador aéreo RPAS · CAAC · UAOC-0-HQ-20260106048</figcaption></figure>
     </div>
     <div class="mvv">
-      <div><h3 data-i18n="mvv.m.t">Misión</h3><p data-i18n="mvv.m.d">Un entorno de trabajo más seguro y una colaboración más armoniosa entre personas y máquinas para la industria petroquímica.</p></div>
-      <div><h3 data-i18n="mvv.v.t">Visión</h3><p data-i18n="mvv.v.d">Modernización del sector impulsada por la tecnología.</p></div>
-      <div><h3 data-i18n="mvv.c.t">Valores</h3><p data-i18n="mvv.c.d">Foco · innovación · colaboración · integridad. Sin soluciones genéricas: cada proyecto se diseña a la medida del cliente.</p></div>
+      <div><h3>Misión</h3><p>Un entorno de trabajo más seguro y una colaboración más armoniosa entre personas y máquinas para la industria petroquímica.</p></div>
+      <div><h3>Visión</h3><p>Modernización del sector impulsada por la tecnología.</p></div>
+      <div><h3>Valores</h3><p>Foco · innovación · colaboración · integridad. Sin soluciones genéricas: cada proyecto se diseña a la medida del cliente.</p></div>
     </div>
   </div>
 </section>
@@ -480,14 +483,15 @@ footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
 <section class="global" id="global">
   <div class="wrap">
     <div>
-      <p class="lbl" data-i18n="glob.kicker">De Tianjin a Brasil, Sudamérica y Oriente Medio</p>
-      <h2 class="d" style="margin:.6rem 0 1rem" data-i18n="glob.title">Presencia global</h2>
-      <p data-i18n="glob.p1">Arcotech lleva sus robots de inspección antideflagrantes, docks de drones, mantenimiento predictivo y control inteligente IPC a los mercados internacionales de petróleo y gas, con foco en Brasil, Sudamérica y Oriente Medio.</p>
-      <p data-i18n="glob.p2">Priorizamos alianzas con empresas locales de ingeniería, inspección y monitoreo de seguridad para atender juntos proyectos de empresas chinas en el exterior y de operadores locales, con despliegue, capacitación y soporte de O&M en el país.</p>
+      <p class="lbl">De Tianjin a Brasil, Sudamérica y Oriente Medio</p>
+      <h2 class="d" style="margin:.6rem 0 1rem">Presencia global</h2>
+      <p>Arcotech lleva sus robots de inspección antideflagrantes, docks de drones, mantenimiento predictivo y control inteligente IPC a los mercados internacionales de petróleo y gas, con foco en Brasil, Sudamérica y Oriente Medio.</p>
+      <p>Priorizamos alianzas con empresas locales de ingeniería, inspección y monitoreo de seguridad para atender juntos proyectos de empresas chinas en el exterior y de operadores locales, con despliegue, capacitación y soporte de O&M en el país.</p>
+      <p>Lo que aportamos a un socio local: acceso directo a proyectos de petróleo, gas y química de capital chino en la región; proyectos conjuntos de I+D y demostración (incluida la cláusula de I+D de la ANP en Brasil); un camino compartido hacia la certificación local (INMETRO, ANATEL y requisitos de Oriente Medio); y un modelo de alianza que cubre localización, capacitación y reparto de ingresos de O&M.</p>
       <div class="steps">
-        <div data-i18n="glob.s1">Socio local</div><div data-i18n="glob.s2">Despliegue y capacitación locales</div><div data-i18n="glob.s3">Soporte de O&M local</div>
+        <div>Socio local</div><div>Despliegue y capacitación locales</div><div>Soporte de O&M local</div>
       </div>
-      <a class="btn primary" href="#contact" style="margin-top:2rem" data-i18n="glob.cta">Hablemos de una alianza regional</a>
+      <a class="btn primary" href="#contact" style="margin-top:2rem">Hablemos de una alianza regional</a>
     </div>
     <svg class="route" viewBox="0 0 560 300" aria-hidden="true">
       <circle class="ring" cx="470" cy="80" r="26"/><circle class="ring" cx="470" cy="80" r="40"/>
@@ -497,12 +501,12 @@ footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
       <circle class="hq" cx="470" cy="80" r="7"/>
       <circle class="pt" cx="240" cy="120" r="6"/>
       <circle class="pt" cx="120" cy="210" r="6"/>
-      <text x="470" y="134" text-anchor="middle" data-i18n="glob.hq">Sede en Tianjin</text>
-      <text x="470" y="152" text-anchor="middle" class="sm" data-i18n="glob.hq.d">Centro de I+D, fabricación y entrega</text>
-      <text x="240" y="100" text-anchor="middle" data-i18n="glob.me">Oriente Medio</text>
-      <text x="240" y="82" text-anchor="middle" class="sm" data-i18n="glob.me.d">Región prioritaria de expansión</text>
-      <text x="120" y="244" text-anchor="middle" data-i18n="glob.br">Río de Janeiro · Brasil</text>
-      <text x="120" y="262" text-anchor="middle" class="sm" data-i18n="glob.br.d">Socia de negocio global — América Latina y mercados lusófonos</text>
+      <text x="470" y="134" text-anchor="middle">Sede en Tianjin</text>
+      <text x="470" y="152" text-anchor="middle" class="sm">Centro de I+D, fabricación y entrega</text>
+      <text x="240" y="100" text-anchor="middle">Oriente Medio</text>
+      <text x="240" y="82" text-anchor="middle" class="sm">Región prioritaria de expansión</text>
+      <text x="120" y="244" text-anchor="middle">Río de Janeiro · Brasil</text>
+      <text x="120" y="262" text-anchor="middle" class="sm">Socia de negocio global — América Latina y mercados lusófonos</text>
     </svg>
   </div>
 </section>
@@ -510,21 +514,21 @@ footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
 <section class="contact" id="contact">
   <div class="wrap">
     <div>
-      <h2 class="d" data-i18n="contact.title">Contacto</h2>
-      <p class="tag" data-i18n="contact.tag">Impulsados por la inteligencia artificial: operaciones más eficientes, un entorno de trabajo más seguro y una colaboración más armoniosa entre personas y máquinas.</p>
+      <h2 class="d">Contacto</h2>
+      <p class="tag">Impulsados por la inteligencia artificial: operaciones más eficientes, un entorno de trabajo más seguro y una colaboración más armoniosa entre personas y máquinas.</p>
     </div>
     <div class="rows">
-      <div class="row"><span class="k" data-i18n="contact.addr.k">Dirección</span><span class="v" data-i18n="contact.addr.v">Edificio 14, EOD Headquarters, Distrito de Dongli, Tianjin, China</span><span></span></div>
-      <div class="row"><span class="k" data-i18n="contact.tel.k">Teléfono</span><span class="v num" style="font-stretch:100%;font-weight:500">+86 133 1209 8502</span><button type="button" data-copy="+8613312098502" data-i18n="contact.copy">Copiar</button></div>
-      <div class="row"><span class="k" data-i18n="contact.mail.k">Correo</span><span class="v">meta@arcotech.cn</span><button type="button" data-copy="meta@arcotech.cn" data-i18n="contact.copy">Copiar</button></div>
+      <div class="row"><span class="k">Dirección</span><span class="v">Edificio 14, EOD Headquarters, Distrito de Dongli, Tianjin, China</span><span></span></div>
+      <div class="row"><span class="k">Teléfono</span><span class="v num" style="font-stretch:100%;font-weight:500">+86 133 1209 8502</span><button type="button" data-copy="+8613312098502">Copiar</button></div>
+      <div class="row"><span class="k">Correo</span><span class="v">meta@arcotech.cn</span><button type="button" data-copy="meta@arcotech.cn">Copiar</button></div>
     </div>
   </div>
 </section>
 </main>
 <footer>
   <div class="wrap">
-    <span><span data-i18n="footer.co">Arcotech (Tianjin) Co., Ltd.</span> · ARCOTECH</span>
-    <span>© 2026 · <span data-i18n="footer.rights">Todos los derechos reservados.</span></span>
+    <span>Arcotech (Tianjin) Co., Ltd.</span>
+    <span>© 2026 · <span>Todos los derechos reservados.</span></span>
   </div>
 </footer>
 
