@@ -1,0 +1,547 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="防爆机器人、无人机机场与 AI 控制系统，为油气与石化装置提供智能巡检、智能运维与全流程智能控制。">
+<link rel="canonical" href="https://arcotech-global.github.io/">
+<link rel="alternate" hreflang="zh-CN" href="https://arcotech-global.github.io/"><link rel="alternate" hreflang="en" href="https://arcotech-global.github.io/en/"><link rel="alternate" hreflang="pt-BR" href="https://arcotech-global.github.io/pt/"><link rel="alternate" hreflang="es" href="https://arcotech-global.github.io/es/"><link rel="alternate" hreflang="fr" href="https://arcotech-global.github.io/fr/"><link rel="alternate" hreflang="nb" href="https://arcotech-global.github.io/no/"><link rel="alternate" hreflang="ja" href="https://arcotech-global.github.io/ja/"><link rel="alternate" hreflang="ko" href="https://arcotech-global.github.io/ko/"><link rel="alternate" hreflang="x-default" href="https://arcotech-global.github.io/">
+<meta property="og:type" content="website"><meta property="og:title" content="元核科技 ARCOTECH"><meta property="og:description" content="防爆机器人、无人机机场与 AI 控制系统，为油气与石化装置提供智能巡检、智能运维与全流程智能控制。"><meta property="og:url" content="https://arcotech-global.github.io/"><meta property="og:image" content="https://arcotech-global.github.io/assets/hero.jpg">
+<link rel="icon" href="favicon.png" type="image/png">
+<title>元核科技 ARCOTECH</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Sans+JP:wght@400;500;700&family=Noto+Sans+KR:wght@400;500;700&display=swap">
+<style>
+/* Layout: cinematic industrial. Full-bleed offshore photo opens; the business is stated in three columns
+   directly under it; one schematic (brain + three forces) is the memorable element; everything after it is
+   image-led bands with three bullets each and technical detail folded away. One family (Archivo) at two
+   widths: narrow for display, normal for reading. Teal from the logo; flare amber reserved for figures. */
+:root{
+  --bg:#06111a; --bg2:#0b1922; --bg3:#12242f; --fg:#eef4f6; --muted:#97abb6;
+  --accent:#20cfa3; --accent-ink:#04231b; --flare:#ff9b3d; --line:rgba(151,171,182,.18); --line2:rgba(151,171,182,.34);
+  --sans:"Archivo","Noto Sans SC","Noto Sans JP","Noto Sans KR",system-ui,-apple-system,"Segoe UI",sans-serif;
+  color-scheme:dark;
+}
+@media (prefers-color-scheme: light){
+  :root:not([data-theme="dark"]){
+    --bg:#f3f6f7; --bg2:#ffffff; --bg3:#e5ecef; --fg:#0b1b24; --muted:#546872;
+    --accent:#0f8f70; --accent-ink:#ffffff; --flare:#c4651a; --line:rgba(11,27,36,.13); --line2:rgba(11,27,36,.26);
+    color-scheme:light;
+  }
+}
+:root[data-theme="light"]{
+  --bg:#f3f6f7; --bg2:#ffffff; --bg3:#e5ecef; --fg:#0b1b24; --muted:#546872;
+  --accent:#0f8f70; --accent-ink:#ffffff; --flare:#c4651a; --line:rgba(11,27,36,.13); --line2:rgba(11,27,36,.26);
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto} *{animation:none!important;transition:none!important} }
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--sans);font-size:16.5px;line-height:1.6;-webkit-font-smoothing:antialiased}
+html[lang="ja"] body{--sans:"Noto Sans JP","Archivo",system-ui,sans-serif}
+html[lang="ko"] body{--sans:"Noto Sans KR","Archivo",system-ui,sans-serif}
+html[lang="zh"] body{--sans:"Noto Sans SC","Archivo",system-ui,sans-serif}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:30;background:var(--bg)}
+img{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.wrap{max-width:1240px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+.d{font-family:"Archivo",var(--sans);font-stretch:72%;font-weight:700;line-height:1;letter-spacing:-.01em;text-wrap:balance}
+html[lang="zh"] .d,html[lang="ja"] .d,html[lang="ko"] .d{font-family:var(--sans);font-stretch:100%;letter-spacing:0;line-height:1.12}
+.num{font-variant-numeric:tabular-nums;font-family:"Archivo",var(--sans);font-stretch:75%;font-weight:700}
+.muted{color:var(--muted)}
+.lbl{font-size:.9rem;color:var(--accent);font-weight:600}
+h2.d{font-size:clamp(2.1rem,4.2vw,3.4rem);margin:0}
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.8rem 1.35rem;border-radius:4px;text-decoration:none;font-weight:600;font-size:.98rem;border:1px solid var(--line2);background:transparent;color:inherit}
+.btn.primary{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.btn:hover{filter:brightness(1.1)}
+
+/* nav */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--bg) 84%,transparent);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;gap:1.2rem;min-height:66px;padding-block:.5rem}
+.brand{display:flex;align-items:center;gap:.7rem;text-decoration:none;flex:0 0 auto}
+.brand img{width:38px;height:38px;border-radius:6px;background:#fff;padding:3px}
+.brand b{font-family:"Archivo",var(--sans);font-stretch:80%;font-weight:700;font-size:1.3rem;line-height:1;display:block}
+.brand small{display:block;font-size:.7rem;letter-spacing:.1em;color:var(--muted);margin-top:.2rem}
+nav.main{display:flex;gap:.15rem;margin-left:auto}
+nav.main a{text-decoration:none;font-size:.93rem;padding:.45rem .7rem;border-radius:4px;color:var(--muted);white-space:nowrap}
+nav.main a:hover{color:var(--fg);background:var(--bg3)}
+.langbox{display:flex;align-items:center;gap:.4rem;flex:0 0 auto;margin-left:auto}
+nav.main + .langbox{margin-left:0}
+.langbox select{appearance:none;-webkit-appearance:none;background:var(--bg3);color:var(--fg);border:1px solid var(--line2);border-radius:4px;padding:.5rem 2rem .5rem .8rem;font:inherit;font-size:.9rem;cursor:pointer;
+  background-image:linear-gradient(45deg,transparent 50%,var(--muted) 50%),linear-gradient(135deg,var(--muted) 50%,transparent 50%);background-position:calc(100% - 15px) 50%,calc(100% - 10px) 50%;background-size:5px 5px;background-repeat:no-repeat}
+.globe{width:18px;height:18px;color:var(--accent)}
+@media (max-width:960px){ nav.main{display:none} }
+
+/* hero */
+.hero{position:relative;isolation:isolate;overflow:hidden;background:#06111a}
+.hero img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:62% 50%;z-index:-2;opacity:.95}
+.hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(6,17,26,.92) 0%,rgba(6,17,26,.72) 45%,rgba(6,17,26,.25) 100%),linear-gradient(0deg,rgba(6,17,26,1) 0%,rgba(6,17,26,0) 40%)}
+.hero .wrap{padding-block:clamp(5rem,12vw,9.5rem) clamp(3rem,7vw,5rem);color:#eef4f6}
+.hero .lbl{color:#20cfa3}
+.hero h1{font-size:clamp(2.5rem,6vw,5.4rem);margin:.9rem 0 1.2rem;max-width:16ch;color:#fff}
+html[lang="zh"] .hero h1,html[lang="ja"] .hero h1,html[lang="ko"] .hero h1{max-width:14ch;font-size:clamp(2.2rem,5.2vw,4.4rem)}
+.hero p{font-size:1.12rem;max-width:36rem;color:#c5d3da;margin:0 0 1.8rem;line-height:1.55}
+.hero .cta{display:flex;gap:.7rem;flex-wrap:wrap}
+.hero .btn{border-color:rgba(255,255,255,.35);color:#fff}
+.hero .btn.primary{color:#04231b;border-color:#20cfa3;background:#20cfa3}
+.hero .co{margin-top:3rem;font-size:.85rem;color:#8ea2ad}
+
+/* at a glance */
+.glance{border-bottom:1px solid var(--line);background:var(--bg2)}
+.glance .wrap{padding-block:3.5rem 3rem}
+.glance h2{font-size:1.1rem;font-weight:600;color:var(--muted);margin:0 0 1.6rem}
+.g3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}
+.g3 > div{padding:0 2rem 0 0;border-right:1px solid var(--line);min-width:0}
+.g3 > div + div{padding-left:2rem}
+.g3 > div:last-child{border-right:0;padding-right:0}
+.g3 .pic{height:150px;display:flex;align-items:flex-end;margin-bottom:1.2rem}
+.g3 .pic img{max-height:150px;width:auto;max-width:100%;object-fit:contain}
+.g3 .pic img.cover{height:150px;width:100%;object-fit:cover;border-radius:4px}
+.g3 h3{font-size:1.75rem;margin:0 0 .4rem}
+.g3 .k{font-size:.9rem;color:var(--muted);margin:0 0 1rem;min-height:2.6em}
+.g3 .n{display:flex;align-items:baseline;gap:.6rem;border-top:1px solid var(--line);padding-top:.9rem}
+.g3 .n b{font-size:2.3rem;color:var(--flare);line-height:1}
+.g3 .n span{font-size:.85rem;color:var(--muted)}
+@media (max-width:860px){ .g3{grid-template-columns:1fr;gap:2rem} .g3 > div{border-right:0;padding:0!important;border-bottom:1px solid var(--line);padding-bottom:2rem!important} .g3 > div:last-child{border-bottom:0;padding-bottom:0!important} }
+
+/* schematic */
+.arch{padding-block:5rem;border-bottom:1px solid var(--line)}
+.arch .head{max-width:46rem;margin-bottom:3rem}
+.arch .head p{color:var(--muted);font-size:1.08rem;margin:1rem 0 0}
+.schem{display:grid;grid-template-columns:minmax(0,1fr) 72px minmax(0,1.15fr) 72px minmax(0,1fr);gap:0;align-items:stretch}
+.schem .col{display:grid;gap:.9rem;align-content:center;min-width:0}
+.schem .ttl{font-size:.85rem;color:var(--muted);margin:0 0 .2rem;font-weight:600}
+.node{background:var(--bg2);border:1px solid var(--line);border-radius:6px;padding:1rem 1.1rem;display:grid;grid-template-columns:34px 1fr;gap:.8rem;align-items:start;min-width:0}
+.node svg{width:34px;height:34px;color:var(--accent)}
+.node b{display:block;font-size:1.05rem;line-height:1.2;margin-bottom:.2rem}
+.node span{font-size:.86rem;color:var(--muted);line-height:1.45}
+.node.out{grid-template-columns:1fr;border-left:3px solid var(--flare)}
+.brain{background:linear-gradient(160deg,var(--bg3),var(--bg2));border:1px solid var(--accent);border-radius:8px;padding:1.6rem 1.4rem;align-self:center;position:relative;box-shadow:0 0 0 6px color-mix(in srgb,var(--accent) 12%,transparent)}
+.brain h3{font-size:1.5rem;margin:0 0 .5rem;line-height:1.1}
+.brain p{margin:0 0 .9rem;font-size:.9rem;color:var(--muted)}
+.brain ul{list-style:none;margin:0;padding:0;display:grid;gap:.35rem}
+.brain li{font-size:.85rem;padding-left:1rem;position:relative}
+.brain li::before{content:"";position:absolute;left:0;top:.55em;width:.45rem;height:.45rem;background:var(--accent);border-radius:1px}
+.wire{width:72px;height:100%;min-height:260px;display:block}
+.wire path{fill:none;stroke:var(--accent);stroke-width:1.6;stroke-dasharray:6 6;animation:flow 1.6s linear infinite;vector-effect:non-scaling-stroke}
+.wire.back path{stroke:var(--flare);animation-direction:normal}
+@keyframes flow{to{stroke-dashoffset:-24}}
+@media (max-width:900px){ .schem{grid-template-columns:1fr;gap:1rem} .wire{display:none} .schem .col{order:0} }
+
+/* bands */
+.band{padding-block:5rem;border-bottom:1px solid var(--line)}
+.band .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:4rem;align-items:center}
+.band.flip .wrap > .txt{order:-1}
+.band .pic img{width:100%;height:auto;border-radius:6px;border:1px solid var(--line)}
+.band .pic.contain,.band .pic.white{background:#fff;border-radius:6px;padding:1.5rem;border:1px solid var(--line)}
+.band .pic.contain img,.band .pic.white img{border:0;border-radius:0;max-height:400px;width:auto;margin:0 auto}
+.mosaic{display:grid;grid-template-columns:1fr 1fr;gap:.6rem}
+.mosaic img{aspect-ratio:1.6/1;object-fit:cover;width:100%;border-radius:6px;border:1px solid var(--line)}
+.mosaic img:first-child{grid-column:1/-1;aspect-ratio:2.6/1}
+.txt .lbl{margin:0 0 .7rem}
+.txt h2{margin:0 0 1rem}
+.txt .lead{color:var(--muted);font-size:1.08rem;margin:0 0 1.4rem}
+ul.pts{list-style:none;margin:0;padding:0;display:grid;gap:.8rem}
+ul.pts li{position:relative;padding-left:1.4rem;font-size:1rem;line-height:1.5}
+ul.pts li::before{content:"";position:absolute;left:0;top:.55em;width:.6rem;height:.6rem;background:var(--accent);border-radius:1px}
+details{margin-top:1.4rem;border-top:1px solid var(--line)}
+details summary{cursor:pointer;list-style:none;padding:.9rem 0;font-weight:600;font-size:.95rem;display:flex;align-items:center;gap:.6rem;color:var(--accent)}
+details summary::-webkit-details-marker{display:none}
+details summary::after{content:"";width:.55rem;height:.55rem;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(45deg);margin-left:auto;transition:transform .2s}
+details[open] summary::after{transform:rotate(-135deg)}
+details .in{padding-bottom:1rem;color:var(--muted);font-size:.93rem;display:grid;gap:.8rem}
+details .in h4{margin:.4rem 0 .2rem;color:var(--fg);font-size:1rem}
+details .in p{margin:0}
+table.spec{width:100%;border-collapse:collapse;font-size:.9rem}
+table.spec th,table.spec td{text-align:left;padding:.5rem .7rem;border-bottom:1px solid var(--line);vertical-align:top}
+table.spec th{width:36%;color:var(--muted);font-weight:500}
+.tablewrap{overflow-x:auto}
+.chips{display:flex;flex-wrap:wrap;gap:.5rem;margin:0 0 1.2rem}
+.chip{border:1px solid var(--line2);border-radius:3px;padding:.3rem .7rem;font-size:.88rem}
+@media (max-width:860px){ .band{padding-block:3.5rem} .band .wrap{grid-template-columns:1fr;gap:2rem} .band.flip .wrap > .txt{order:0} .band .pic{order:-1} }
+
+/* results band */
+.results{position:relative;isolation:isolate;overflow:hidden;color:#eef4f6;border-bottom:1px solid var(--line)}
+.results img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2}
+.results::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(6,17,26,.82),rgba(6,17,26,.9))}
+.results .wrap{padding-block:5rem}
+.results h2{color:#fff;margin-bottom:.5rem}
+.results .sub{color:#b7c6ce;margin:0 0 2.5rem;max-width:40rem}
+.rgrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:2rem}
+.rgrid b{display:block;font-size:clamp(3rem,6vw,4.6rem);color:#ffb15c;line-height:1}
+.rgrid span{display:block;margin-top:.6rem;color:#d7e1e6;font-size:.95rem;border-top:1px solid rgba(255,255,255,.2);padding-top:.6rem}
+@media (max-width:760px){ .rgrid{grid-template-columns:repeat(2,minmax(0,1fr))} }
+table.case{width:100%;border-collapse:collapse;font-size:.95rem;margin-top:2.5rem;max-width:44rem}
+table.case th,table.case td{padding:.6rem .8rem;border-bottom:1px solid rgba(255,255,255,.18);text-align:left}
+table.case th{color:#b7c6ce;font-weight:500;font-size:.85rem}
+table.case td.n{font-size:1.3rem}
+table.case td.after{color:#20cfa3}
+.results .note{color:#b7c6ce;font-size:.88rem;margin:.8rem 0 0}
+
+/* proof */
+.proof{padding-block:5rem;border-bottom:1px solid var(--line)}
+.proof .head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);gap:3rem;align-items:start}
+.certs{display:flex;gap:.8rem;overflow-x:auto;padding:1.2rem 0 1.4rem;scroll-snap-type:x proximity}
+.certs img{height:200px;width:auto;flex:0 0 auto;border-radius:4px;border:1px solid var(--line);scroll-snap-align:start;background:#fff}
+ul.creds{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.7rem 2rem}
+ul.creds li{position:relative;padding-left:1.6rem;font-size:.95rem;line-height:1.45}
+ul.creds li svg{position:absolute;left:0;top:.2em;width:1rem;height:1rem;color:var(--accent)}
+.mvv{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2rem;margin-top:3rem;padding-top:2rem;border-top:1px solid var(--line)}
+.mvv h3{font-size:.9rem;font-weight:600;color:var(--accent);margin:0 0 .4rem}
+.mvv p{margin:0;font-size:1.05rem}
+@media (max-width:860px){ .proof .head{grid-template-columns:1fr} ul.creds{grid-template-columns:1fr} .mvv{grid-template-columns:1fr} }
+
+/* global */
+.global{padding-block:5rem;border-bottom:1px solid var(--line);background:var(--bg2)}
+.global .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:4rem;align-items:center}
+.global p{color:var(--muted);font-size:1.05rem;margin:0 0 1rem}
+.route{width:100%;height:auto;display:block}
+.route .ln{fill:none;stroke:var(--accent);stroke-width:1.5;stroke-dasharray:5 6}
+.route .pt{fill:var(--accent)}
+.route .hq{fill:var(--flare)}
+.route .ring{fill:none;stroke:var(--accent);stroke-opacity:.35}
+.route text{fill:var(--fg);font-family:var(--sans);font-size:13px;font-weight:600}
+.route text.sm{fill:var(--muted);font-size:11px;font-weight:400}
+.steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem;margin-top:2rem}
+.steps div{border-top:2px solid var(--accent);padding-top:.7rem;font-size:.95rem;font-weight:600}
+@media (max-width:860px){ .global .wrap{grid-template-columns:1fr} .steps{grid-template-columns:1fr} }
+
+/* contact */
+.contact{padding-block:5rem}
+.contact .wrap{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:4rem;align-items:start}
+.contact .tag{font-size:clamp(1.5rem,2.6vw,2.1rem);line-height:1.25;max-width:26ch;margin:.8rem 0 0;font-weight:600}
+.rows{display:grid;gap:.6rem}
+.row{display:grid;grid-template-columns:6.5rem 1fr auto;gap:.8rem;align-items:center;border-bottom:1px solid var(--line);padding:.9rem 0}
+.row .k{font-size:.85rem;color:var(--muted)}
+.row .v{font-size:1.05rem;word-break:break-all;user-select:all}
+.row button{font:inherit;font-size:.82rem;padding:.35rem .75rem;border-radius:3px;border:1px solid var(--line2);background:var(--bg3);color:var(--fg);cursor:pointer}
+.row button:hover{border-color:var(--accent)}
+@media (max-width:860px){ .contact .wrap{grid-template-columns:1fr;gap:2rem} }
+@media (max-width:480px){ .row{grid-template-columns:1fr;gap:.3rem} .row button{justify-self:start} }
+footer{padding-block:1.6rem 2.2rem;color:var(--muted);font-size:.85rem;border-top:1px solid var(--line)}
+footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+</style>
+
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="ARCOTECH">
+      <img src="assets/logo.png" alt="" width="38" height="38">
+      <span><b>ARCOTECH</b><small>元核科技</small></span>
+    </a>
+    <nav class="main" aria-label="Main">
+      <a href="#glance" data-i18n="nav.about">公司介绍</a>
+      <a href="#s1" data-i18n="nav.solutions">解决方案</a>
+      <a href="#s3" data-i18n="nav.products">产品体系</a>
+      <a href="#proof" data-i18n="nav.creds">资质与合作</a>
+      <a href="#global" data-i18n="nav.global">全球业务</a>
+      <a href="#contact" data-i18n="nav.contact">联系我们</a>
+    </nav>
+    <div class="langbox">
+      <svg class="globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.5 3 14.5 0 18M12 3c-3 3.5-3 14.5 0 18"/></svg>
+      <label for="lang" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)" data-i18n="nav.lang">语言</label>
+      <select id="lang" aria-label="Language"><option value="zh" selected>中文</option><option value="en">English</option><option value="pt">Português</option><option value="es">Español</option><option value="fr">Français</option><option value="no">Norsk</option><option value="ja">日本語</option><option value="ko">한국어</option></select>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero">
+  <img class="bg" src="assets/hero.jpg" alt="" width="1600" height="900">
+  <div class="wrap">
+    <div class="lbl" data-i18n="hero.eyebrow">面向石油、天然气、石化与化工的 AI 智能运营</div>
+    <h1 class="d" data-i18n="hero.title">为油气行业征服禁区，再造安全与价值的边界</h1>
+    <p data-i18n="hero.sub">防爆机器人、无人机机场与 AI 控制系统，为油气与石化装置提供智能巡检、智能运维与全流程智能控制。</p>
+    <div class="cta">
+      <a class="btn primary" href="#s1" data-i18n="hero.cta1">查看解决方案</a>
+      <a class="btn" href="#global" data-i18n="hero.cta2">洽谈合作</a>
+    </div>
+    <div class="co"><span data-i18n="footer.co">元核科技（天津）有限公司</span> · Tianjin, China</div>
+  </div>
+</section>
+
+<section class="glance" id="glance">
+  <div class="wrap">
+    <h2 data-i18n="at.t">三件事，一眼看懂</h2>
+    <div class="g3">
+      <div>
+        <div class="pic"><img src="assets/robot.png" alt="Explosion-proof inspection robot" width="488" height="211"></div>
+        <h3 class="d" data-i18n="pillar1.t">智能巡检</h3>
+        <p class="k" data-i18n="pillar1.k">防爆机器人 · 无人机机场 · 固定哨兵</p>
+        <div class="n"><b class="num" data-i18n="pillar1.n">3–5 秒</b><span data-i18n="pillar1.nl">初期火焰识别</span></div>
+      </div>
+      <div>
+        <div class="pic"><img class="cover" src="assets/robot-3.jpg" alt="Thermal imaging of rotating equipment"></div>
+        <h3 class="d" data-i18n="pillar2.t">智能运维</h3>
+        <p class="k" data-i18n="pillar2.k">无线振动传感 · 诊断模型 · 运维平台</p>
+        <div class="n"><b class="num" data-i18n="pillar2.n">7×24</b><span data-i18n="pillar2.nl">在线状态监测</span></div>
+      </div>
+      <div>
+        <div class="pic"><img class="cover" src="assets/digital-twin.jpg" alt="Digital twin of a process unit"></div>
+        <h3 class="d" data-i18n="pillar3.t">全流程智能控制</h3>
+        <p class="k" data-i18n="pillar3.k">Robust-IPC · 智能 PID · 多变量控制</p>
+        <div class="n"><b class="num" data-i18n="pillar3.n">99%+</b><span data-i18n="pillar3.nl">装置自控率</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="arch">
+  <div class="wrap">
+    <div class="head">
+      <h2 class="d" data-i18n="arch.t">一个大脑，三支部队</h2>
+      <p data-i18n="arch.d">油气 AI 大脑汇聚算法库、安全风险图谱与行业数据；地面机器人、固定哨兵与空中舰队把现场数据送回大脑，形成从感知到处置的闭环。</p>
+    </div>
+    <div class="schem">
+      <div class="col">
+        <p class="ttl" data-i18n="arch.in">现场感知</p>
+        <div class="node">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="4" y="9" width="16" height="8" rx="2"/><circle cx="8" cy="19" r="2"/><circle cx="16" cy="19" r="2"/><path d="M12 9V5M9 5h6"/></svg>
+          <div><b data-i18n="s1.l2.t">机器人 · 地面部队</b><span data-i18n="s1.l2.d">深入装置区替代人工进行防爆巡检，采集设备表观、声音、振动、温度与气体浓度数据。</span></div>
+        </div>
+        <div class="node">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 3v4M12 21v-4M5 12H3M21 12h-2"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5" fill="currentColor"/></svg>
+          <div><b data-i18n="s1.l3.t">固定哨兵</b><span data-i18n="s1.l3.d">对关键点位进行 7×24 小时生命体征监测，实现秒级异常告警。</span></div>
+        </div>
+        <div class="node">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="5" cy="6" r="2.5"/><circle cx="19" cy="6" r="2.5"/><circle cx="5" cy="18" r="2.5"/><circle cx="19" cy="18" r="2.5"/><rect x="9" y="9" width="6" height="6" rx="1"/><path d="M7 7.5l2.5 2.5M17 7.5l-2.5 2.5M7 16.5l2.5-2.5M17 16.5l-2.5-2.5"/></svg>
+          <div><b data-i18n="s1.l4.t">空中舰队</b><span data-i18n="s1.l4.d">快速覆盖全场，进行宏观监测、三维建模与高空设备巡查。</span></div>
+        </div>
+      </div>
+      <svg class="wire" viewBox="0 0 72 300" preserveAspectRatio="none" aria-hidden="true"><path d="M0 50 C36 50 36 150 72 150"/><path d="M0 150 L72 150"/><path d="M0 250 C36 250 36 150 72 150"/></svg>
+      <div class="brain">
+        <h3 class="d" data-i18n="s1.l1.t">油气 AI 大脑</h3>
+        <p data-i18n="s1.l1.d">算法经验库、安全风险图谱库、场景解决方案库、行业专属数据集与工艺设计方案库。</p>
+        <ul>
+          <li data-i18n="theme3">智保安全</li><li data-i18n="theme2">预测性维护</li><li data-i18n="theme1">信息化升级</li><li data-i18n="theme4">节能降耗</li>
+        </ul>
+      </div>
+      <svg class="wire back" viewBox="0 0 72 300" preserveAspectRatio="none" aria-hidden="true"><path d="M0 150 C36 150 36 50 72 50"/><path d="M0 150 L72 150"/><path d="M0 150 C36 150 36 250 72 250"/></svg>
+      <div class="col">
+        <p class="ttl" data-i18n="arch.out">处置与优化</p>
+        <div class="node out"><div><b data-i18n="arch.o1">秒级安全告警</b><span data-i18n="s1.fire.t">初期火灾智能识别</span></div></div>
+        <div class="node out"><div><b data-i18n="arch.o2">预测性维护</b><span data-i18n="s3.v3">全厂设备全生命周期健康管理</span></div></div>
+        <div class="node out"><div><b data-i18n="arch.o3">全流程智能控制</b><span data-i18n="pillar3.d">Robust-IPC 智能控制系统，从基础 PID 到多变量控制，实现装置安、稳、长、满、优运行。</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="s1">
+  <div class="wrap">
+    <div class="pic contain"><img src="assets/robot-ex.jpg" alt="Explosion-proof tracked inspection robot" width="692" height="496" loading="lazy"></div>
+    <div class="txt">
+      <p class="lbl" data-i18n="theme3">智保安全</p>
+      <h2 class="d" data-i18n="s1.t">油气全面智保安全体系</h2>
+      <p class="lead" data-i18n="s1.d">以“油气 AI 大脑”为中枢，整合地面、固定与空中三支巡检力量，构建厂区全要素安全感知网络。</p>
+      <ul class="pts"><li data-i18n="s1.c2">大泄漏检测：100 m 外 1 m×1 m 气体泄漏目标自动识别报警。</li><li data-i18n="s1.c3">微小泄漏走航监测：硫化氢、可燃气、氢气、一氧化碳；硫化氢检出下限 <1 ppm，响应 10 秒内。</li><li data-i18n="s1.c1">仪表识别：高清可见光实时捕捉表计图像，数字图像算法智能读数。</li></ul>
+      <details><summary data-i18n="ui.specs">技术参数与细节</summary><div class="in">
+        <p data-i18n="s1.c4">异常噪声分析：随云台转动的高灵敏度拾音器，定向采集设备音频。</p><p data-i18n="s1.c5">异常温度分析：红外测温成像，阈值越限实时报警。</p>
+        <h4 data-i18n="s1.fire.t">初期火灾智能识别</h4><p data-i18n="s1.fire.d">基于亿级火焰特征库与 30 余种火焰识别模型，对罐区、汽车栈台、热油泵、高温管线等关键风险点位 3–5 秒内识别初期火焰，弹窗、声音、短信同步报警，并推送至消防支队与应急救援基地系统。</p>
+        <h4 data-i18n="s1.site.t">作业安全管控</h4><p data-i18n="s1.site.d">承包商全流程智管（人脸识别、RFID、物联网闭环），施工违章 AI 监控（工服、安全帽、动火气瓶距离），电子作业票 + 5G/北斗高精度定位到场签票，三维厂区人员精准定位与历史轨迹回溯。</p>
+      </div></details>
+    </div>
+  </div>
+</section>
+
+<section class="band flip" id="s2">
+  <div class="wrap">
+    <div class="pic white"><img src="assets/drone-dock.jpg" alt="Automated drone dock with aircraft" loading="lazy"></div>
+    <div class="txt">
+      <p class="lbl" data-i18n="theme3">智保安全</p>
+      <h2 class="d" data-i18n="s2.t">无人机平台体系</h2>
+      <p class="lead" data-i18n="s2.d">针对油气厂区、采油井场的高温、高粉尘、强电磁干扰环境，提供软硬一体化的无人巡检体系。</p>
+      <ul class="pts"><li data-i18n="s2.b1.d">多旋翼旗舰机型（Mavic 3/4 行业版、M300/M350/M400）与长航时固定翼（HC-526），覆盖近远场、高低空不同作业半径。</li><li data-i18n="s2.b2.d">红外热像、高倍可见光、激光甲烷遥测、LiDAR；支持喊话、应急取水、绳索救援等功能载荷。</li><li data-i18n="s2.b3.d">蜂巢航宇 SU-50PRO 与大疆机场 3 双方案，7×24 小时自动起降、数据回传与自动充电或换电，适配偏远场站与边境管线。</li></ul>
+      <details><summary data-i18n="ui.specs">技术参数与细节</summary><div class="in">
+        <h4 data-i18n="s2.b4.t">算力与对接</h4><p data-i18n="s2.b4.d">边缘 AI 算力集群现场处理，标准化 RESTful API，兼容第三方传感器与企业业务系统（RTMP/RTSP/GB28181、Cloud API）。</p><p data-i18n="s2.use">典型作业：管道焊缝探伤、防腐层完整性检测、管架结构形变巡检。</p>
+      </div></details>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="s3">
+  <div class="wrap">
+    <div class="pic"><div class="mosaic">
+      <img src="assets/robot-1.jpg" alt="Robot reading gauges in a process unit" loading="lazy">
+      <img src="assets/robot-2.jpg" alt="Robot inspecting pumps" loading="lazy">
+      <img src="assets/robot-3.jpg" alt="Thermal imaging" loading="lazy">
+    </div></div>
+    <div class="txt">
+      <p class="lbl" data-i18n="theme2">预测性维护</p>
+      <h2 class="d" data-i18n="s3.t">预测性维护</h2>
+      <p class="lead" data-i18n="s3.d">振动机理 + 数理模型的设备故障预测与诊断系统，叠加工艺数理模型诊断工具，覆盖机械磨损、电气故障与工艺变换导致的设备故障。</p>
+      <ul class="pts"><li data-i18n="s3.v1">预测并诊断设备全部故障类型</li><li data-i18n="s3.v3">全厂设备全生命周期健康管理</li><li data-i18n="s3.v4">打通 DCS、MES、EAM、PLM 数据孤岛</li></ul>
+      <details><summary data-i18n="ui.specs">技术参数与细节</summary><div class="in">
+        <h4 data-i18n="s3.sensor.t">FXD11M-Z 无线多功能传感器</h4>
+        <div class="tablewrap"><table class="spec">
+          <tr><th data-i18n="s3.sp1.k">加速度</th><td data-i18n="s3.sp1.v">三轴 MEMS</td></tr>
+          <tr><th data-i18n="s3.sp2.k">频响 (-3 dB)</th><td data-i18n="s3.sp2.v">Z 轴 0.1–10 kHz · XY 0.5–1.6 kHz</td></tr>
+          <tr><th data-i18n="s3.sp3.k">输出</th><td data-i18n="s3.sp3.v">总值、时域波形、定制指标、触发采集</td></tr>
+          <tr><th data-i18n="s3.sp4.k">工作温度</th><td data-i18n="s3.sp4.v">-20 ℃ 至 80 ℃</td></tr>
+          <tr><th data-i18n="s3.sp5.k">无线</th><td data-i18n="s3.sp5.v">IEEE 802.15.4 Zigbee / 蓝牙，无障碍 250 m</td></tr>
+          <tr><th data-i18n="s3.sp6.k">电池</th><td data-i18n="s3.sp6.v">3 年（默认配置）</td></tr>
+          <tr><th data-i18n="s3.sp7.k">尺寸</th><td data-i18n="s3.sp7.v">87 × 42 × 42 mm 长方体，稳定不滚动</td></tr>
+        </table></div>
+        <h4 data-i18n="s3.wired.t">有线采集站</h4><p data-i18n="s3.wired.d">8/16 高速 IEPE 通道（2.5–50 kHz）、4/8 缓变量通道（4–20 mA）、数字脉冲、音频噪声通道、RS485 Modbus RTU；4M 长波形采集，FFT 谱线 100–102 400；Wi-Fi 配置，断网缓存自动重传。</p>
+        <h4 data-i18n="s3.sw.t">软件平台</h4>
+        <p><b style="color:var(--fg)" data-i18n="s3.sw1.t">AI 设备卫士</b> — <span data-i18n="s3.sw1.d">智能大屏、设备诊断、事件时间轴、报警管理、知识库、周报月报</span></p>
+        <p><b style="color:var(--fg)" data-i18n="s3.sw2.t">巡检助手</b> — <span data-i18n="s3.sw2.d">蓝牙采集、实时指标、红外测温、自动巡检报告</span></p>
+        <p><b style="color:var(--fg)" data-i18n="s3.sw3.t">维保帮手</b> — <span data-i18n="s3.sw3.d">工单管理、设备台账、备件与团队管理、运维分析</span></p>
+        <p data-i18n="s3.int">系统对接：WebAPI、MQTT、iframe 嵌入</p>
+      </div></details>
+    </div>
+  </div>
+</section>
+
+<section class="band flip" id="s4">
+  <div class="wrap">
+    <div class="pic"><img src="assets/digital-twin.jpg" alt="Digital twin of a process unit" loading="lazy"></div>
+    <div class="txt">
+      <p class="lbl" data-i18n="theme1">信息化升级</p>
+      <h2 class="d" data-i18n="s4.t">数字孪生工厂</h2>
+      <p class="lead" data-i18n="s4.d">从建设期数字化交付到运营期全息门户，一个数字底座贯穿工程与生产。</p>
+      <ul class="pts"><li data-i18n="s4.b1">进度管理：一至工序级进度计划，三维模型颜色化展示设计、采购、施工进度；无人机航拍 720° VR 全景按周记录。</li><li data-i18n="s4.o1">生产装置：面向管理者与工程师的穿透式全息门户，实时数据、生产预警、人员定位、应急三维联动。</li><li data-i18n="s4.o2">三维 DCS 交互：虚拟三维工厂 + 二维 DCS 画面 + 实体工厂融合，接入 DCS 实时/历史数据，创新人机界面。</li></ul>
+      <details><summary data-i18n="ui.specs">技术参数与细节</summary><div class="in">
+        <h4 data-i18n="s4.b.t">建设期 · 数字孪生交付</h4><p data-i18n="s4.b2">质量管理：与 4D 精益管道施工系统集成，焊缝与关键阀门法兰可视化，焊接一次合格率实时统计，数据流转至运营期压力管道监检。</p><p data-i18n="s4.b3">施工现场：“天眼 + 地面”视频监控，AI 识别、精准定位与电子围栏管控人员车辆，吊装环境异常入侵报警。</p>
+        <h4 data-i18n="s4.o.t">运营期 · 数字孪生</h4><p data-i18n="s4.o3">内置 BI 工具与 P&ID 交互，多维度数据分类与跨场景分发。</p>
+      </div></details>
+    </div>
+  </div>
+</section>
+
+<section class="results" id="s5">
+  <img class="bg" src="assets/tank-farm.jpg" alt="">
+  <div class="wrap">
+    <p class="lbl" data-i18n="theme4">节能降耗</p>
+    <h2 class="d" data-i18n="s5.t">Robust-IPC 全流程智能控制</h2>
+    <p class="sub" data-i18n="s5.d">针对生产过程多变量、强耦合、非线性、大时滞的控制难题，开发具有自主知识产权的从基础控制到多变量控制的一体化解决方案。</p>
+    <div class="rgrid">
+      <div><b class="num" data-i18n="s5.r1.v">99%+</b><span data-i18n="s5.r1.l">装置自控率</span></div>
+      <div><b class="num" data-i18n="s5.r2.v">98%+</b><span data-i18n="s5.r2.l">控制回路平稳率</span></div>
+      <div><b class="num" data-i18n="s5.r3.v">-20%</b><span data-i18n="s5.r3.l">各回路均方差</span></div>
+      <div><b class="num" data-i18n="s5.r4.v">-80%</b><span data-i18n="s5.r4.l">报警次数</span></div>
+    </div>
+    <div class="tablewrap">
+    <table class="case">
+      <caption style="text-align:left;color:#b7c6ce;font-size:.9rem;padding-bottom:.5rem" data-i18n="s5.case.t">能耗案例（综合能耗，kg 标油 / t）</caption>
+      <thead><tr><th data-i18n="s5.case.h1">装置</th><th data-i18n="s5.case.h2">实施前</th><th data-i18n="s5.case.h3">实施后</th></tr></thead>
+      <tbody>
+        <tr><td data-i18n="s5.case.u1">2# 气分装置</td><td class="n num">46.48</td><td class="n num after">42.03</td></tr>
+        <tr><td data-i18n="s5.case.u2">渣油加氢装置</td><td class="n num">17.55</td><td class="n num after">15.26</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p class="note" data-i18n="s5.case.n">2# 气分装置年综合创效约 1 100 万元人民币。</p>
+    <div class="chips" style="margin:2rem 0 0">
+      <span class="chip" style="border-color:rgba(255,255,255,.3)" data-i18n="s5.ch1">精准建模难</span><span class="chip" style="border-color:rgba(255,255,255,.3)" data-i18n="s5.ch2">精准控制难</span><span class="chip" style="border-color:rgba(255,255,255,.3)" data-i18n="s5.ch3">方案设计难</span><span class="chip" style="border-color:rgba(255,255,255,.3)" data-i18n="s5.ch4">多变量控制难</span><span class="chip" style="border-color:rgba(255,255,255,.3)" data-i18n="s5.ch5">故障诊断难</span>
+    </div>
+    <p class="note" data-i18n="s5.tech">智能建模 · 智能内模集 PID · IMC / IMC-PID · 多模型控制 · 多变量智能解耦 · 多变量预测控制 · 多目标多约束调控 · 最优控制设计 · 专家系统 · 混合精英圈养优化算法</p>
+    <p class="note" data-i18n="s5.units">适用装置：乙烯、催化裂化、MTO/MTP 及烯烃分离、净化、PP、PE、乙二醇等。</p>
+  </div>
+</section>
+
+<section class="proof" id="proof">
+  <div class="wrap">
+    <div class="head">
+      <div>
+        <h2 class="d" data-i18n="cred.title">资质与合作</h2>
+        <p class="muted" style="margin:.8rem 0 0" data-i18n="cred.kicker">可验证的交付能力</p>
+      </div>
+      <ul class="creds">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="cred1">电子与智能化工程总承包二级资质及安全生产许可证</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="cred2">质量、环境、职业健康安全三体系认证</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="cred3">10 余项主营业务相关软件著作权</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="cred4">与浙江大学共建油气田生产智能装备及控制联合研究中心</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="cred5">与中信开诚重工战略合作，取得中海油市场授权</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="cred6">民用无人驾驶航空器运营合格证</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="cred7">自研防爆消防灭火侦察机器人，主要机型取得防爆认证</span></li>
+      </ul>
+    </div>
+    <p class="lbl" style="margin:2.5rem 0 0" data-i18n="proof.t">证书与资质</p>
+    <div class="certs">
+      <img src="assets/cert-zju.jpg" alt="Zhejiang University joint research centre plaque">
+      <img src="assets/cert-iso-1.jpg" width="150" height="200" alt="Quality management system certificate">
+      <img src="assets/cert-iso-2.jpg" width="150" height="200" alt="Occupational health and safety management certificate">
+      <img src="assets/cert-iso-3.jpg" width="150" height="200" alt="Environmental management system certificate">
+      <img src="assets/cert-ex.jpg" width="150" height="200" alt="Explosion-proof conformity certificate">
+      <img src="assets/cert-uav.jpg" width="150" height="200" alt="Civil UAV operator certificate">
+    </div>
+    <div class="mvv">
+      <div><h3 data-i18n="mvv.m.t">使命</h3><p data-i18n="mvv.m.d">为石油化工行业提供更安全的工作环境、更和谐的人机协作。</p></div>
+      <div><h3 data-i18n="mvv.v.t">愿景</h3><p data-i18n="mvv.v.d">科技驱动行业升级。</p></div>
+      <div><h3 data-i18n="mvv.c.t">价值观</h3><p data-i18n="mvv.c.d">专注 · 创新 · 合作 · 信用。拒绝削足适履，为客户量体裁衣。</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="global" id="global">
+  <div class="wrap">
+    <div>
+      <p class="lbl" data-i18n="glob.kicker">从天津走向巴西、南美与中东</p>
+      <h2 class="d" style="margin:.6rem 0 1rem" data-i18n="glob.title">全球业务</h2>
+      <p data-i18n="glob.p1">元核科技正将防爆巡检机器人、无人机机场系统、预测性维护与 IPC 智能控制带入海外油气市场，重点面向巴西及南美、中东地区。</p>
+      <p data-i18n="glob.p2">我们优先与当地工程、检验与安全监测企业建立合作，共同服务中资企业海外项目与本地运营商，提供本地化部署、培训与运维支持。</p>
+      <div class="steps">
+        <div data-i18n="glob.s1">本地合作伙伴</div><div data-i18n="glob.s2">本地部署与培训</div><div data-i18n="glob.s3">本地运维支持</div>
+      </div>
+      <a class="btn primary" href="#contact" style="margin-top:2rem" data-i18n="glob.cta">洽谈区域合作</a>
+    </div>
+    <svg class="route" viewBox="0 0 560 300" aria-hidden="true">
+      <circle class="ring" cx="470" cy="80" r="26"/><circle class="ring" cx="470" cy="80" r="40"/>
+      <path class="ln" d="M470 80 C390 30 300 40 240 120"/>
+      <path class="ln" d="M470 80 C360 150 220 160 120 210"/>
+      <path class="ln" d="M240 120 C210 160 170 190 120 210"/>
+      <circle class="hq" cx="470" cy="80" r="7"/>
+      <circle class="pt" cx="240" cy="120" r="6"/>
+      <circle class="pt" cx="120" cy="210" r="6"/>
+      <text x="470" y="134" text-anchor="middle" data-i18n="glob.hq">天津总部</text>
+      <text x="470" y="152" text-anchor="middle" class="sm" data-i18n="glob.hq.d">研发、制造与交付中心</text>
+      <text x="240" y="100" text-anchor="middle" data-i18n="glob.me">中东</text>
+      <text x="240" y="82" text-anchor="middle" class="sm" data-i18n="glob.me.d">重点拓展区域</text>
+      <text x="120" y="244" text-anchor="middle" data-i18n="glob.br">里约热内卢 · 巴西</text>
+      <text x="120" y="262" text-anchor="middle" class="sm" data-i18n="glob.br.d">全球业务合伙人 — 拉美与葡语市场</text>
+    </svg>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div>
+      <h2 class="d" data-i18n="contact.title">联系我们</h2>
+      <p class="tag" data-i18n="contact.tag">以人工智能驱动：更高效的工作成果，更安全的工作环境，更和谐的人机协作。</p>
+    </div>
+    <div class="rows">
+      <div class="row"><span class="k" data-i18n="contact.addr.k">地址</span><span class="v" data-i18n="contact.addr.v">中国天津市东丽区 EOD 总部 14 号楼</span><span></span></div>
+      <div class="row"><span class="k" data-i18n="contact.tel.k">电话</span><span class="v num" style="font-stretch:100%;font-weight:500">+86 133 1209 8502</span><button type="button" data-copy="+8613312098502" data-i18n="contact.copy">复制</button></div>
+      <div class="row"><span class="k" data-i18n="contact.mail.k">邮箱</span><span class="v">meta@arcotech.cn</span><button type="button" data-copy="meta@arcotech.cn" data-i18n="contact.copy">复制</button></div>
+    </div>
+  </div>
+</section>
+</main>
+<footer>
+  <div class="wrap">
+    <span><span data-i18n="footer.co">元核科技（天津）有限公司</span> · ARCOTECH</span>
+    <span>© 2026 · <span data-i18n="footer.rights">保留所有权利。</span></span>
+  </div>
+</footer>
+
+
+<script>
+document.getElementById('lang').addEventListener('change', function(e){
+  var l = e.target.value; var base = location.pathname.replace(/\/(en|pt|es|fr|no|ja|ko)\/?$/, '/').replace(/index\.html$/, '');
+  location.href = base + (l === 'zh' ? '' : l + '/');
+});
+document.querySelectorAll('button[data-copy]').forEach(function(btn){
+  btn.addEventListener('click', function(){
+    var txt = btn.getAttribute('data-copy'), orig = btn.textContent;
+    var done = function(){ btn.textContent = '已复制'; setTimeout(function(){ btn.textContent = orig; }, 1600); };
+    var fallback = function(){ var v = btn.parentElement.querySelector('.v'); var r = document.createRange(); r.selectNodeContents(v); var s = window.getSelection(); s.removeAllRanges(); s.addRange(r); };
+    if(navigator.clipboard && navigator.clipboard.writeText){ navigator.clipboard.writeText(txt).then(done).catch(fallback); } else fallback();
+  });
+});
+</script>
+</body>
+</html>

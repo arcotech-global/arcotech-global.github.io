@@ -1,0 +1,547 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="Robots antidéflagrants, stations de drones et contrôle avancé (APC) par IA : inspection, maintenance et contrôle intelligent de l'ensemble du procédé pour les unités pétrolières, gazières et pétrochimiques.">
+<link rel="canonical" href="https://arcotech-global.github.io/fr/">
+<link rel="alternate" hreflang="zh-CN" href="https://arcotech-global.github.io/"><link rel="alternate" hreflang="en" href="https://arcotech-global.github.io/en/"><link rel="alternate" hreflang="pt-BR" href="https://arcotech-global.github.io/pt/"><link rel="alternate" hreflang="es" href="https://arcotech-global.github.io/es/"><link rel="alternate" hreflang="fr" href="https://arcotech-global.github.io/fr/"><link rel="alternate" hreflang="nb" href="https://arcotech-global.github.io/no/"><link rel="alternate" hreflang="ja" href="https://arcotech-global.github.io/ja/"><link rel="alternate" hreflang="ko" href="https://arcotech-global.github.io/ko/"><link rel="alternate" hreflang="x-default" href="https://arcotech-global.github.io/">
+<meta property="og:type" content="website"><meta property="og:title" content="ARCOTECH · 元核科技"><meta property="og:description" content="Robots antidéflagrants, stations de drones et contrôle avancé (APC) par IA : inspection, maintenance et contrôle intelligent de l'ensemble du procédé pour les unités pétrolières, gazières et pétrochimiques."><meta property="og:url" content="https://arcotech-global.github.io/fr/"><meta property="og:image" content="https://arcotech-global.github.io/assets/hero.jpg">
+<link rel="icon" href="../favicon.png" type="image/png">
+<title>ARCOTECH · 元核科技</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Sans+JP:wght@400;500;700&family=Noto+Sans+KR:wght@400;500;700&display=swap">
+<style>
+/* Layout: cinematic industrial. Full-bleed offshore photo opens; the business is stated in three columns
+   directly under it; one schematic (brain + three forces) is the memorable element; everything after it is
+   image-led bands with three bullets each and technical detail folded away. One family (Archivo) at two
+   widths: narrow for display, normal for reading. Teal from the logo; flare amber reserved for figures. */
+:root{
+  --bg:#06111a; --bg2:#0b1922; --bg3:#12242f; --fg:#eef4f6; --muted:#97abb6;
+  --accent:#20cfa3; --accent-ink:#04231b; --flare:#ff9b3d; --line:rgba(151,171,182,.18); --line2:rgba(151,171,182,.34);
+  --sans:"Archivo","Noto Sans SC","Noto Sans JP","Noto Sans KR",system-ui,-apple-system,"Segoe UI",sans-serif;
+  color-scheme:dark;
+}
+@media (prefers-color-scheme: light){
+  :root:not([data-theme="dark"]){
+    --bg:#f3f6f7; --bg2:#ffffff; --bg3:#e5ecef; --fg:#0b1b24; --muted:#546872;
+    --accent:#0f8f70; --accent-ink:#ffffff; --flare:#c4651a; --line:rgba(11,27,36,.13); --line2:rgba(11,27,36,.26);
+    color-scheme:light;
+  }
+}
+:root[data-theme="light"]{
+  --bg:#f3f6f7; --bg2:#ffffff; --bg3:#e5ecef; --fg:#0b1b24; --muted:#546872;
+  --accent:#0f8f70; --accent-ink:#ffffff; --flare:#c4651a; --line:rgba(11,27,36,.13); --line2:rgba(11,27,36,.26);
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto} *{animation:none!important;transition:none!important} }
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--sans);font-size:16.5px;line-height:1.6;-webkit-font-smoothing:antialiased}
+html[lang="ja"] body{--sans:"Noto Sans JP","Archivo",system-ui,sans-serif}
+html[lang="ko"] body{--sans:"Noto Sans KR","Archivo",system-ui,sans-serif}
+html[lang="zh"] body{--sans:"Noto Sans SC","Archivo",system-ui,sans-serif}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:30;background:var(--bg)}
+img{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.wrap{max-width:1240px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+.d{font-family:"Archivo",var(--sans);font-stretch:72%;font-weight:700;line-height:1;letter-spacing:-.01em;text-wrap:balance}
+html[lang="zh"] .d,html[lang="ja"] .d,html[lang="ko"] .d{font-family:var(--sans);font-stretch:100%;letter-spacing:0;line-height:1.12}
+.num{font-variant-numeric:tabular-nums;font-family:"Archivo",var(--sans);font-stretch:75%;font-weight:700}
+.muted{color:var(--muted)}
+.lbl{font-size:.9rem;color:var(--accent);font-weight:600}
+h2.d{font-size:clamp(2.1rem,4.2vw,3.4rem);margin:0}
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.8rem 1.35rem;border-radius:4px;text-decoration:none;font-weight:600;font-size:.98rem;border:1px solid var(--line2);background:transparent;color:inherit}
+.btn.primary{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.btn:hover{filter:brightness(1.1)}
+
+/* nav */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--bg) 84%,transparent);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;gap:1.2rem;min-height:66px;padding-block:.5rem}
+.brand{display:flex;align-items:center;gap:.7rem;text-decoration:none;flex:0 0 auto}
+.brand img{width:38px;height:38px;border-radius:6px;background:#fff;padding:3px}
+.brand b{font-family:"Archivo",var(--sans);font-stretch:80%;font-weight:700;font-size:1.3rem;line-height:1;display:block}
+.brand small{display:block;font-size:.7rem;letter-spacing:.1em;color:var(--muted);margin-top:.2rem}
+nav.main{display:flex;gap:.15rem;margin-left:auto}
+nav.main a{text-decoration:none;font-size:.93rem;padding:.45rem .7rem;border-radius:4px;color:var(--muted);white-space:nowrap}
+nav.main a:hover{color:var(--fg);background:var(--bg3)}
+.langbox{display:flex;align-items:center;gap:.4rem;flex:0 0 auto;margin-left:auto}
+nav.main + .langbox{margin-left:0}
+.langbox select{appearance:none;-webkit-appearance:none;background:var(--bg3);color:var(--fg);border:1px solid var(--line2);border-radius:4px;padding:.5rem 2rem .5rem .8rem;font:inherit;font-size:.9rem;cursor:pointer;
+  background-image:linear-gradient(45deg,transparent 50%,var(--muted) 50%),linear-gradient(135deg,var(--muted) 50%,transparent 50%);background-position:calc(100% - 15px) 50%,calc(100% - 10px) 50%;background-size:5px 5px;background-repeat:no-repeat}
+.globe{width:18px;height:18px;color:var(--accent)}
+@media (max-width:960px){ nav.main{display:none} }
+
+/* hero */
+.hero{position:relative;isolation:isolate;overflow:hidden;background:#06111a}
+.hero img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:62% 50%;z-index:-2;opacity:.95}
+.hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(6,17,26,.92) 0%,rgba(6,17,26,.72) 45%,rgba(6,17,26,.25) 100%),linear-gradient(0deg,rgba(6,17,26,1) 0%,rgba(6,17,26,0) 40%)}
+.hero .wrap{padding-block:clamp(5rem,12vw,9.5rem) clamp(3rem,7vw,5rem);color:#eef4f6}
+.hero .lbl{color:#20cfa3}
+.hero h1{font-size:clamp(2.5rem,6vw,5.4rem);margin:.9rem 0 1.2rem;max-width:16ch;color:#fff}
+html[lang="zh"] .hero h1,html[lang="ja"] .hero h1,html[lang="ko"] .hero h1{max-width:14ch;font-size:clamp(2.2rem,5.2vw,4.4rem)}
+.hero p{font-size:1.12rem;max-width:36rem;color:#c5d3da;margin:0 0 1.8rem;line-height:1.55}
+.hero .cta{display:flex;gap:.7rem;flex-wrap:wrap}
+.hero .btn{border-color:rgba(255,255,255,.35);color:#fff}
+.hero .btn.primary{color:#04231b;border-color:#20cfa3;background:#20cfa3}
+.hero .co{margin-top:3rem;font-size:.85rem;color:#8ea2ad}
+
+/* at a glance */
+.glance{border-bottom:1px solid var(--line);background:var(--bg2)}
+.glance .wrap{padding-block:3.5rem 3rem}
+.glance h2{font-size:1.1rem;font-weight:600;color:var(--muted);margin:0 0 1.6rem}
+.g3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}
+.g3 > div{padding:0 2rem 0 0;border-right:1px solid var(--line);min-width:0}
+.g3 > div + div{padding-left:2rem}
+.g3 > div:last-child{border-right:0;padding-right:0}
+.g3 .pic{height:150px;display:flex;align-items:flex-end;margin-bottom:1.2rem}
+.g3 .pic img{max-height:150px;width:auto;max-width:100%;object-fit:contain}
+.g3 .pic img.cover{height:150px;width:100%;object-fit:cover;border-radius:4px}
+.g3 h3{font-size:1.75rem;margin:0 0 .4rem}
+.g3 .k{font-size:.9rem;color:var(--muted);margin:0 0 1rem;min-height:2.6em}
+.g3 .n{display:flex;align-items:baseline;gap:.6rem;border-top:1px solid var(--line);padding-top:.9rem}
+.g3 .n b{font-size:2.3rem;color:var(--flare);line-height:1}
+.g3 .n span{font-size:.85rem;color:var(--muted)}
+@media (max-width:860px){ .g3{grid-template-columns:1fr;gap:2rem} .g3 > div{border-right:0;padding:0!important;border-bottom:1px solid var(--line);padding-bottom:2rem!important} .g3 > div:last-child{border-bottom:0;padding-bottom:0!important} }
+
+/* schematic */
+.arch{padding-block:5rem;border-bottom:1px solid var(--line)}
+.arch .head{max-width:46rem;margin-bottom:3rem}
+.arch .head p{color:var(--muted);font-size:1.08rem;margin:1rem 0 0}
+.schem{display:grid;grid-template-columns:minmax(0,1fr) 72px minmax(0,1.15fr) 72px minmax(0,1fr);gap:0;align-items:stretch}
+.schem .col{display:grid;gap:.9rem;align-content:center;min-width:0}
+.schem .ttl{font-size:.85rem;color:var(--muted);margin:0 0 .2rem;font-weight:600}
+.node{background:var(--bg2);border:1px solid var(--line);border-radius:6px;padding:1rem 1.1rem;display:grid;grid-template-columns:34px 1fr;gap:.8rem;align-items:start;min-width:0}
+.node svg{width:34px;height:34px;color:var(--accent)}
+.node b{display:block;font-size:1.05rem;line-height:1.2;margin-bottom:.2rem}
+.node span{font-size:.86rem;color:var(--muted);line-height:1.45}
+.node.out{grid-template-columns:1fr;border-left:3px solid var(--flare)}
+.brain{background:linear-gradient(160deg,var(--bg3),var(--bg2));border:1px solid var(--accent);border-radius:8px;padding:1.6rem 1.4rem;align-self:center;position:relative;box-shadow:0 0 0 6px color-mix(in srgb,var(--accent) 12%,transparent)}
+.brain h3{font-size:1.5rem;margin:0 0 .5rem;line-height:1.1}
+.brain p{margin:0 0 .9rem;font-size:.9rem;color:var(--muted)}
+.brain ul{list-style:none;margin:0;padding:0;display:grid;gap:.35rem}
+.brain li{font-size:.85rem;padding-left:1rem;position:relative}
+.brain li::before{content:"";position:absolute;left:0;top:.55em;width:.45rem;height:.45rem;background:var(--accent);border-radius:1px}
+.wire{width:72px;height:100%;min-height:260px;display:block}
+.wire path{fill:none;stroke:var(--accent);stroke-width:1.6;stroke-dasharray:6 6;animation:flow 1.6s linear infinite;vector-effect:non-scaling-stroke}
+.wire.back path{stroke:var(--flare);animation-direction:normal}
+@keyframes flow{to{stroke-dashoffset:-24}}
+@media (max-width:900px){ .schem{grid-template-columns:1fr;gap:1rem} .wire{display:none} .schem .col{order:0} }
+
+/* bands */
+.band{padding-block:5rem;border-bottom:1px solid var(--line)}
+.band .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:4rem;align-items:center}
+.band.flip .wrap > .txt{order:-1}
+.band .pic img{width:100%;height:auto;border-radius:6px;border:1px solid var(--line)}
+.band .pic.contain,.band .pic.white{background:#fff;border-radius:6px;padding:1.5rem;border:1px solid var(--line)}
+.band .pic.contain img,.band .pic.white img{border:0;border-radius:0;max-height:400px;width:auto;margin:0 auto}
+.mosaic{display:grid;grid-template-columns:1fr 1fr;gap:.6rem}
+.mosaic img{aspect-ratio:1.6/1;object-fit:cover;width:100%;border-radius:6px;border:1px solid var(--line)}
+.mosaic img:first-child{grid-column:1/-1;aspect-ratio:2.6/1}
+.txt .lbl{margin:0 0 .7rem}
+.txt h2{margin:0 0 1rem}
+.txt .lead{color:var(--muted);font-size:1.08rem;margin:0 0 1.4rem}
+ul.pts{list-style:none;margin:0;padding:0;display:grid;gap:.8rem}
+ul.pts li{position:relative;padding-left:1.4rem;font-size:1rem;line-height:1.5}
+ul.pts li::before{content:"";position:absolute;left:0;top:.55em;width:.6rem;height:.6rem;background:var(--accent);border-radius:1px}
+details{margin-top:1.4rem;border-top:1px solid var(--line)}
+details summary{cursor:pointer;list-style:none;padding:.9rem 0;font-weight:600;font-size:.95rem;display:flex;align-items:center;gap:.6rem;color:var(--accent)}
+details summary::-webkit-details-marker{display:none}
+details summary::after{content:"";width:.55rem;height:.55rem;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(45deg);margin-left:auto;transition:transform .2s}
+details[open] summary::after{transform:rotate(-135deg)}
+details .in{padding-bottom:1rem;color:var(--muted);font-size:.93rem;display:grid;gap:.8rem}
+details .in h4{margin:.4rem 0 .2rem;color:var(--fg);font-size:1rem}
+details .in p{margin:0}
+table.spec{width:100%;border-collapse:collapse;font-size:.9rem}
+table.spec th,table.spec td{text-align:left;padding:.5rem .7rem;border-bottom:1px solid var(--line);vertical-align:top}
+table.spec th{width:36%;color:var(--muted);font-weight:500}
+.tablewrap{overflow-x:auto}
+.chips{display:flex;flex-wrap:wrap;gap:.5rem;margin:0 0 1.2rem}
+.chip{border:1px solid var(--line2);border-radius:3px;padding:.3rem .7rem;font-size:.88rem}
+@media (max-width:860px){ .band{padding-block:3.5rem} .band .wrap{grid-template-columns:1fr;gap:2rem} .band.flip .wrap > .txt{order:0} .band .pic{order:-1} }
+
+/* results band */
+.results{position:relative;isolation:isolate;overflow:hidden;color:#eef4f6;border-bottom:1px solid var(--line)}
+.results img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2}
+.results::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(6,17,26,.82),rgba(6,17,26,.9))}
+.results .wrap{padding-block:5rem}
+.results h2{color:#fff;margin-bottom:.5rem}
+.results .sub{color:#b7c6ce;margin:0 0 2.5rem;max-width:40rem}
+.rgrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:2rem}
+.rgrid b{display:block;font-size:clamp(3rem,6vw,4.6rem);color:#ffb15c;line-height:1}
+.rgrid span{display:block;margin-top:.6rem;color:#d7e1e6;font-size:.95rem;border-top:1px solid rgba(255,255,255,.2);padding-top:.6rem}
+@media (max-width:760px){ .rgrid{grid-template-columns:repeat(2,minmax(0,1fr))} }
+table.case{width:100%;border-collapse:collapse;font-size:.95rem;margin-top:2.5rem;max-width:44rem}
+table.case th,table.case td{padding:.6rem .8rem;border-bottom:1px solid rgba(255,255,255,.18);text-align:left}
+table.case th{color:#b7c6ce;font-weight:500;font-size:.85rem}
+table.case td.n{font-size:1.3rem}
+table.case td.after{color:#20cfa3}
+.results .note{color:#b7c6ce;font-size:.88rem;margin:.8rem 0 0}
+
+/* proof */
+.proof{padding-block:5rem;border-bottom:1px solid var(--line)}
+.proof .head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);gap:3rem;align-items:start}
+.certs{display:flex;gap:.8rem;overflow-x:auto;padding:1.2rem 0 1.4rem;scroll-snap-type:x proximity}
+.certs img{height:200px;width:auto;flex:0 0 auto;border-radius:4px;border:1px solid var(--line);scroll-snap-align:start;background:#fff}
+ul.creds{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.7rem 2rem}
+ul.creds li{position:relative;padding-left:1.6rem;font-size:.95rem;line-height:1.45}
+ul.creds li svg{position:absolute;left:0;top:.2em;width:1rem;height:1rem;color:var(--accent)}
+.mvv{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2rem;margin-top:3rem;padding-top:2rem;border-top:1px solid var(--line)}
+.mvv h3{font-size:.9rem;font-weight:600;color:var(--accent);margin:0 0 .4rem}
+.mvv p{margin:0;font-size:1.05rem}
+@media (max-width:860px){ .proof .head{grid-template-columns:1fr} ul.creds{grid-template-columns:1fr} .mvv{grid-template-columns:1fr} }
+
+/* global */
+.global{padding-block:5rem;border-bottom:1px solid var(--line);background:var(--bg2)}
+.global .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:4rem;align-items:center}
+.global p{color:var(--muted);font-size:1.05rem;margin:0 0 1rem}
+.route{width:100%;height:auto;display:block}
+.route .ln{fill:none;stroke:var(--accent);stroke-width:1.5;stroke-dasharray:5 6}
+.route .pt{fill:var(--accent)}
+.route .hq{fill:var(--flare)}
+.route .ring{fill:none;stroke:var(--accent);stroke-opacity:.35}
+.route text{fill:var(--fg);font-family:var(--sans);font-size:13px;font-weight:600}
+.route text.sm{fill:var(--muted);font-size:11px;font-weight:400}
+.steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem;margin-top:2rem}
+.steps div{border-top:2px solid var(--accent);padding-top:.7rem;font-size:.95rem;font-weight:600}
+@media (max-width:860px){ .global .wrap{grid-template-columns:1fr} .steps{grid-template-columns:1fr} }
+
+/* contact */
+.contact{padding-block:5rem}
+.contact .wrap{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:4rem;align-items:start}
+.contact .tag{font-size:clamp(1.5rem,2.6vw,2.1rem);line-height:1.25;max-width:26ch;margin:.8rem 0 0;font-weight:600}
+.rows{display:grid;gap:.6rem}
+.row{display:grid;grid-template-columns:6.5rem 1fr auto;gap:.8rem;align-items:center;border-bottom:1px solid var(--line);padding:.9rem 0}
+.row .k{font-size:.85rem;color:var(--muted)}
+.row .v{font-size:1.05rem;word-break:break-all;user-select:all}
+.row button{font:inherit;font-size:.82rem;padding:.35rem .75rem;border-radius:3px;border:1px solid var(--line2);background:var(--bg3);color:var(--fg);cursor:pointer}
+.row button:hover{border-color:var(--accent)}
+@media (max-width:860px){ .contact .wrap{grid-template-columns:1fr;gap:2rem} }
+@media (max-width:480px){ .row{grid-template-columns:1fr;gap:.3rem} .row button{justify-self:start} }
+footer{padding-block:1.6rem 2.2rem;color:var(--muted);font-size:.85rem;border-top:1px solid var(--line)}
+footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+</style>
+
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="ARCOTECH">
+      <img src="../assets/logo.png" alt="" width="38" height="38">
+      <span><b>ARCOTECH</b><small>元核科技</small></span>
+    </a>
+    <nav class="main" aria-label="Main">
+      <a href="#glance" data-i18n="nav.about">Entreprise</a>
+      <a href="#s1" data-i18n="nav.solutions">Solutions</a>
+      <a href="#s3" data-i18n="nav.products">Produits</a>
+      <a href="#proof" data-i18n="nav.creds">Références</a>
+      <a href="#global" data-i18n="nav.global">International</a>
+      <a href="#contact" data-i18n="nav.contact">Contact</a>
+    </nav>
+    <div class="langbox">
+      <svg class="globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.5 3 14.5 0 18M12 3c-3 3.5-3 14.5 0 18"/></svg>
+      <label for="lang" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)" data-i18n="nav.lang">Langue</label>
+      <select id="lang" aria-label="Language"><option value="zh">中文</option><option value="en">English</option><option value="pt">Português</option><option value="es">Español</option><option value="fr" selected>Français</option><option value="no">Norsk</option><option value="ja">日本語</option><option value="ko">한국어</option></select>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero">
+  <img class="bg" src="../assets/hero.jpg" alt="" width="1600" height="900">
+  <div class="wrap">
+    <div class="lbl" data-i18n="hero.eyebrow">Exploitation intelligente des sites pétroliers, gaziers, pétrochimiques et chimiques</div>
+    <h1 class="d" data-i18n="hero.title">Intervenir là où l'humain ne va plus. Repousser la frontière entre sécurité et création de valeur.</h1>
+    <p data-i18n="hero.sub">Robots antidéflagrants, stations de drones et contrôle avancé (APC) par IA : inspection, maintenance et contrôle intelligent de l'ensemble du procédé pour les unités pétrolières, gazières et pétrochimiques.</p>
+    <div class="cta">
+      <a class="btn primary" href="#s1" data-i18n="hero.cta1">Voir les solutions</a>
+      <a class="btn" href="#global" data-i18n="hero.cta2">Nous contacter</a>
+    </div>
+    <div class="co"><span data-i18n="footer.co">Arcotech (Tianjin) Co., Ltd.</span> · Tianjin, China</div>
+  </div>
+</section>
+
+<section class="glance" id="glance">
+  <div class="wrap">
+    <h2 data-i18n="at.t">Notre métier en trois axes</h2>
+    <div class="g3">
+      <div>
+        <div class="pic"><img src="../assets/robot.png" alt="Explosion-proof inspection robot" width="488" height="211"></div>
+        <h3 class="d" data-i18n="pillar1.t">Inspection intelligente</h3>
+        <p class="k" data-i18n="pillar1.k">Robots antidéflagrants · stations de drones · points de surveillance fixes</p>
+        <div class="n"><b class="num" data-i18n="pillar1.n">3–5 s</b><span data-i18n="pillar1.nl">Détection d'un départ de feu</span></div>
+      </div>
+      <div>
+        <div class="pic"><img class="cover" src="../assets/robot-3.jpg" alt="Thermal imaging of rotating equipment"></div>
+        <h3 class="d" data-i18n="pillar2.t">Maintenance intelligente</h3>
+        <p class="k" data-i18n="pillar2.k">Capteurs de vibrations sans fil · modèles de diagnostic · plateforme de maintenance</p>
+        <div class="n"><b class="num" data-i18n="pillar2.n">24/7</b><span data-i18n="pillar2.nl">Surveillance d'état en ligne</span></div>
+      </div>
+      <div>
+        <div class="pic"><img class="cover" src="../assets/digital-twin.jpg" alt="Digital twin of a process unit"></div>
+        <h3 class="d" data-i18n="pillar3.t">Contrôle intelligent de l'ensemble du procédé</h3>
+        <p class="k" data-i18n="pillar3.k">Robust-IPC · PID intelligent · contrôle multivariable</p>
+        <div class="n"><b class="num" data-i18n="pillar3.n">99 %+</b><span data-i18n="pillar3.nl">Taux de boucles en automatique</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="arch">
+  <div class="wrap">
+    <div class="head">
+      <h2 class="d" data-i18n="arch.t">Un cerveau, trois moyens de terrain</h2>
+      <p data-i18n="arch.d">Le Cerveau IA Pétrole & Gaz réunit la bibliothèque d'algorithmes, le graphe des risques et les données du secteur. Robots terrestres, points de surveillance fixes et flotte de drones lui remontent les données du terrain et ferment la boucle, de la perception à l'action.</p>
+    </div>
+    <div class="schem">
+      <div class="col">
+        <p class="ttl" data-i18n="arch.in">Perception terrain</p>
+        <div class="node">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="4" y="9" width="16" height="8" rx="2"/><circle cx="8" cy="19" r="2"/><circle cx="16" cy="19" r="2"/><path d="M12 9V5M9 5h6"/></svg>
+          <div><b data-i18n="s1.l2.t">Robots terrestres</b><span data-i18n="s1.l2.d">Robots antidéflagrants qui entrent dans les unités à la place des opérateurs pour l'inspection en zone à risque d'explosion et relèvent l'état visuel, le bruit, les vibrations, la température et les concentrations de gaz des équipements.</span></div>
+        </div>
+        <div class="node">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 3v4M12 21v-4M5 12H3M21 12h-2"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5" fill="currentColor"/></svg>
+          <div><b data-i18n="s1.l3.t">Points de surveillance fixes</b><span data-i18n="s1.l3.d">Surveillance 24/7 des paramètres d'état aux points critiques, avec alarme en quelques secondes en cas d'anomalie.</span></div>
+        </div>
+        <div class="node">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="5" cy="6" r="2.5"/><circle cx="19" cy="6" r="2.5"/><circle cx="5" cy="18" r="2.5"/><circle cx="19" cy="18" r="2.5"/><rect x="9" y="9" width="6" height="6" rx="1"/><path d="M7 7.5l2.5 2.5M17 7.5l-2.5 2.5M7 16.5l2.5-2.5M17 16.5l-2.5-2.5"/></svg>
+          <div><b data-i18n="s1.l4.t">Flotte de drones</b><span data-i18n="s1.l4.d">Couverture rapide de l'ensemble du site : surveillance d'ensemble, modélisation 3D et inspection des équipements en hauteur.</span></div>
+        </div>
+      </div>
+      <svg class="wire" viewBox="0 0 72 300" preserveAspectRatio="none" aria-hidden="true"><path d="M0 50 C36 50 36 150 72 150"/><path d="M0 150 L72 150"/><path d="M0 250 C36 250 36 150 72 150"/></svg>
+      <div class="brain">
+        <h3 class="d" data-i18n="s1.l1.t">Cerveau IA Pétrole & Gaz</h3>
+        <p data-i18n="s1.l1.d">Base de connaissances algorithmique, graphe des risques sécurité, bibliothèque de solutions par scénario, jeux de données métier et bibliothèque de dossiers de conception procédé.</p>
+        <ul>
+          <li data-i18n="theme3">Sécurité intelligente</li><li data-i18n="theme2">Maintenance prédictive</li><li data-i18n="theme1">Modernisation des systèmes d'information</li><li data-i18n="theme4">Économies d'énergie et réduction des consommations</li>
+        </ul>
+      </div>
+      <svg class="wire back" viewBox="0 0 72 300" preserveAspectRatio="none" aria-hidden="true"><path d="M0 150 C36 150 36 50 72 50"/><path d="M0 150 L72 150"/><path d="M0 150 C36 150 36 250 72 250"/></svg>
+      <div class="col">
+        <p class="ttl" data-i18n="arch.out">Action et optimisation</p>
+        <div class="node out"><div><b data-i18n="arch.o1">Alarmes de sécurité en quelques secondes</b><span data-i18n="s1.fire.t">Détection des départs de feu</span></div></div>
+        <div class="node out"><div><b data-i18n="arch.o2">Maintenance prédictive</b><span data-i18n="s3.v3">Suivi de santé de l'ensemble des équipements sur tout leur cycle de vie</span></div></div>
+        <div class="node out"><div><b data-i18n="arch.o3">Contrôle intelligent de l'ensemble du procédé</b><span data-i18n="pillar3.d">Le système Robust-IPC, de la régulation PID de base au contrôle multivariable, pour une marche sûre, stable, en longue campagne, à pleine charge et optimisée.</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="s1">
+  <div class="wrap">
+    <div class="pic contain"><img src="../assets/robot-ex.jpg" alt="Explosion-proof tracked inspection robot" width="692" height="496" loading="lazy"></div>
+    <div class="txt">
+      <p class="lbl" data-i18n="theme3">Sécurité intelligente</p>
+      <h2 class="d" data-i18n="s1.t">Sécurité intelligente globale des sites pétroliers et gaziers</h2>
+      <p class="lead" data-i18n="s1.d">Autour du Cerveau IA Pétrole & Gaz, trois moyens d'inspection – robots terrestres, points de surveillance fixes et flotte de drones – forment un réseau de surveillance de la sécurité couvrant l'ensemble des équipements du site.</p>
+      <ul class="pts"><li data-i18n="s1.c2">Détection des fuites majeures : reconnaissance et alarme automatiques d'un panache de gaz de 1 m × 1 m à 100 m de distance.</li><li data-i18n="s1.c3">Détection des microfuites en déplacement : H₂S, gaz inflammables, hydrogène et CO ; limite de détection H₂S <1 ppm, temps de réponse inférieur à 10 s.</li><li data-i18n="s1.c1">Lecture d'instruments : prise de vue HD des indicateurs locaux en lumière visible et lecture automatique par traitement d'image.</li></ul>
+      <details><summary data-i18n="ui.specs">Caractéristiques techniques</summary><div class="in">
+        <p data-i18n="s1.c4">Analyse des bruits anormaux : microphone haute sensibilité monté sur la tourelle pan-tilt, pour une écoute directionnelle des équipements.</p><p data-i18n="s1.c5">Analyse des températures anormales : thermographie infrarouge et alarme en temps réel dès dépassement de seuil.</p>
+        <h4 data-i18n="s1.fire.t">Détection des départs de feu</h4><p data-i18n="s1.fire.d">Une bibliothèque de l'ordre de cent millions de signatures de flamme et plus de 30 modèles de reconnaissance identifient un départ de feu en 3 à 5 secondes sur les points à risque : parcs de stockage, postes de chargement camions, pompes d'huile chaude et lignes haute température. Alarme simultanée par fenêtre à l'écran, signal sonore et SMS, avec transmission aux pompiers et au système de la base d'intervention d'urgence.</p>
+        <h4 data-i18n="s1.site.t">Maîtrise de la sécurité des travaux</h4><p data-i18n="s1.site.d">Gestion des entreprises extérieures sur tout le cycle d'intervention (reconnaissance faciale, RFID, boucle IoT) ; détection par IA des infractions sur chantier (tenue de travail, casque, distance des bouteilles de gaz en travaux par point chaud) ; permis de travail électroniques signés sur place, présence vérifiée par positionnement haute précision 5G/BeiDou ; localisation précise du personnel et relecture des trajets sur le modèle 3D du site.</p>
+      </div></details>
+    </div>
+  </div>
+</section>
+
+<section class="band flip" id="s2">
+  <div class="wrap">
+    <div class="pic white"><img src="../assets/drone-dock.jpg" alt="Automated drone dock with aircraft" loading="lazy"></div>
+    <div class="txt">
+      <p class="lbl" data-i18n="theme3">Sécurité intelligente</p>
+      <h2 class="d" data-i18n="s2.t">Plateforme drones</h2>
+      <p class="lead" data-i18n="s2.d">Un système d'inspection par drone intégré, matériel et logiciel, conçu pour les environnements à haute température, fortement poussiéreux et à fortes perturbations électromagnétiques des sites pétroliers, gaziers et des plateformes de puits.</p>
+      <ul class="pts"><li data-i18n="s2.b1.d">Multirotors haut de gamme (Mavic 3/4 Enterprise, M300/M350/M400) et voilure fixe longue endurance HC-526, pour couvrir le proche comme le lointain, à basse comme à haute altitude.</li><li data-i18n="s2.b2.d">Imagerie thermique infrarouge, caméra visible à fort zoom, télédétection laser du méthane et LiDAR ; en complément, mégaphone embarqué, prélèvement d'eau d'urgence et sauvetage par corde.</li><li data-i18n="s2.b3.d">Deux options, Fengchao SU-50PRO et DJI Dock 3, pour décollage et atterrissage automatiques 24/7, remontée des données et recharge automatique ou changement de batterie, adaptées aux sites isolés et aux pipelines en zone frontalière.</li></ul>
+      <details><summary data-i18n="ui.specs">Caractéristiques techniques</summary><div class="in">
+        <h4 data-i18n="s2.b4.t">Traitement et intégration</h4><p data-i18n="s2.b4.d">Cluster de calcul IA en périphérie (edge) pour le traitement sur site, API RESTful standardisées et compatibilité avec les capteurs tiers et les systèmes d'entreprise (RTMP/RTSP/GB28181, Cloud API).</p><p data-i18n="s2.use">Missions types : contrôle des soudures de pipelines, intégrité du revêtement anticorrosion, déformation des structures de racks de tuyauterie.</p>
+      </div></details>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="s3">
+  <div class="wrap">
+    <div class="pic"><div class="mosaic">
+      <img src="../assets/robot-1.jpg" alt="Robot reading gauges in a process unit" loading="lazy">
+      <img src="../assets/robot-2.jpg" alt="Robot inspecting pumps" loading="lazy">
+      <img src="../assets/robot-3.jpg" alt="Thermal imaging" loading="lazy">
+    </div></div>
+    <div class="txt">
+      <p class="lbl" data-i18n="theme2">Maintenance prédictive</p>
+      <h2 class="d" data-i18n="s3.t">Maintenance prédictive</h2>
+      <p class="lead" data-i18n="s3.d">Un système de prévision et de diagnostic des défaillances qui associe modèles physiques de vibration et modèles mathématiques, complété par des outils de diagnostic fondés sur les modèles de procédé, pour couvrir l'usure mécanique, les défauts électriques et les défaillances liées aux variations de procédé.</p>
+      <ul class="pts"><li data-i18n="s3.v1">Prédire et diagnostiquer tous les types de défaillance</li><li data-i18n="s3.v3">Suivi de santé de l'ensemble des équipements sur tout leur cycle de vie</li><li data-i18n="s3.v4">Décloisonner les données entre DCS (SNCC), MES, EAM et PLM</li></ul>
+      <details><summary data-i18n="ui.specs">Caractéristiques techniques</summary><div class="in">
+        <h4 data-i18n="s3.sensor.t">Capteur multifonction sans fil FXD11M-Z</h4>
+        <div class="tablewrap"><table class="spec">
+          <tr><th data-i18n="s3.sp1.k">Accélération</th><td data-i18n="s3.sp1.v">MEMS triaxial</td></tr>
+          <tr><th data-i18n="s3.sp2.k">Réponse en fréquence (-3 dB)</th><td data-i18n="s3.sp2.v">Z 0,1–10 kHz · XY 0,5–1,6 kHz</td></tr>
+          <tr><th data-i18n="s3.sp3.k">Sortie</th><td data-i18n="s3.sp3.v">Valeur globale, forme d'onde temporelle, indicateurs personnalisés, acquisition déclenchée</td></tr>
+          <tr><th data-i18n="s3.sp4.k">Température de service</th><td data-i18n="s3.sp4.v">-20 °C à 80 °C</td></tr>
+          <tr><th data-i18n="s3.sp5.k">Sans fil</th><td data-i18n="s3.sp5.v">IEEE 802.15.4 Zigbee / Bluetooth, 250 m en vue directe</td></tr>
+          <tr><th data-i18n="s3.sp6.k">Batterie</th><td data-i18n="s3.sp6.v">3 ans (configuration par défaut)</td></tr>
+          <tr><th data-i18n="s3.sp7.k">Format</th><td data-i18n="s3.sp7.v">Bloc de 87 × 42 × 42 mm, stable, ne roule pas</td></tr>
+        </table></div>
+        <h4 data-i18n="s3.wired.t">Unité d'acquisition filaire</h4><p data-i18n="s3.wired.d">8/16 voies IEPE haute vitesse (2,5–50 kHz), 4/8 entrées analogiques lentes 4–20 mA (variables de procédé), entrées impulsionnelles numériques, voies audio/bruit, RS485 Modbus RTU ; formes d'onde longues de 4 M points avec 100 à 102 400 raies FFT ; configuration Wi-Fi, mise en mémoire tampon en cas de coupure réseau et retransmission automatique.</p>
+        <h4 data-i18n="s3.sw.t">Plateforme logicielle</h4>
+        <p><b style="color:var(--fg)" data-i18n="s3.sw1.t">Gardien IA des équipements</b> — <span data-i18n="s3.sw1.d">Écran de supervision, diagnostic des équipements, chronologie des événements, gestion des alarmes, base de connaissances, rapports hebdomadaires et mensuels</span></p>
+        <p><b style="color:var(--fg)" data-i18n="s3.sw2.t">Assistant d'inspection</b> — <span data-i18n="s3.sw2.d">Acquisition Bluetooth, indicateurs en temps réel, relevé de température infrarouge, rapports d'inspection automatiques</span></p>
+        <p><b style="color:var(--fg)" data-i18n="s3.sw3.t">Aide à la maintenance</b> — <span data-i18n="s3.sw3.d">Ordres de travail, inventaire des équipements, gestion des pièces de rechange et des équipes, analyse de la maintenance</span></p>
+        <p data-i18n="s3.int">Intégration : WebAPI, MQTT, iframe</p>
+      </div></details>
+    </div>
+  </div>
+</section>
+
+<section class="band flip" id="s4">
+  <div class="wrap">
+    <div class="pic"><img src="../assets/digital-twin.jpg" alt="Digital twin of a process unit" loading="lazy"></div>
+    <div class="txt">
+      <p class="lbl" data-i18n="theme1">Modernisation des systèmes d'information</p>
+      <h2 class="d" data-i18n="s4.t">Usine à jumeau numérique</h2>
+      <p class="lead" data-i18n="s4.d">Un socle numérique unique, de la livraison numérique en phase de construction au portail 360° de l'exploitation.</p>
+      <ul class="pts"><li data-i18n="s4.b1">Planning : du planning de niveau 1 au planning détaillé par tâche ; avancement des études, des achats et de la construction affiché par code couleur sur le modèle 3D ; panoramas VR 720° hebdomadaires réalisés par drone.</li><li data-i18n="s4.o1">Unités : portail 360° avec navigation descendante (drill-down) pour l'encadrement et les ingénieurs, avec données en temps réel, pré-alarmes de production, localisation du personnel et gestion des urgences couplée au modèle 3D.</li><li data-i18n="s4.o2">Intégration 3D-DCS : usine virtuelle 3D, synoptiques 2D du DCS (SNCC) et installation physique fusionnés, avec accès aux données temps réel et historiques du DCS, pour une interface homme-machine innovante.</li></ul>
+      <details><summary data-i18n="ui.specs">Caractéristiques techniques</summary><div class="in">
+        <h4 data-i18n="s4.b.t">Construction · livraison numérique</h4><p data-i18n="s4.b2">Qualité : intégration au système 4D de construction lean de la tuyauterie ; visualisation des soudures et des brides de vannes critiques ; suivi en temps réel du taux de conformité des soudures au premier contrôle ; données transmises au contrôle réglementaire des tuyauteries sous pression en exploitation.</p><p data-i18n="s4.b3">Chantier : vidéosurveillance aérienne et au sol ; reconnaissance par IA, positionnement précis et barrières virtuelles (géofencing) pour les personnes et les véhicules ; alarme d'intrusion dans le périmètre des opérations de levage.</p>
+        <h4 data-i18n="s4.o.t">Exploitation · jumeau numérique</h4><p data-i18n="s4.o3">Outils BI intégrés et P&ID interactifs, classification multidimensionnelle des données et diffusion multi-scénarios.</p>
+      </div></details>
+    </div>
+  </div>
+</section>
+
+<section class="results" id="s5">
+  <img class="bg" src="../assets/tank-farm.jpg" alt="">
+  <div class="wrap">
+    <p class="lbl" data-i18n="theme4">Économies d'énergie et réduction des consommations</p>
+    <h2 class="d" data-i18n="s5.t">Robust-IPC : contrôle intelligent de l'ensemble du procédé</h2>
+    <p class="sub" data-i18n="s5.d">Une solution intégrée, développée en propre, de la régulation de base à la commande avancée multivariable, pour les procédés multivariables, fortement couplés, non linéaires et à forts retards purs.</p>
+    <div class="rgrid">
+      <div><b class="num" data-i18n="s5.r1.v">99 %+</b><span data-i18n="s5.r1.l">Taux de boucles en automatique</span></div>
+      <div><b class="num" data-i18n="s5.r2.v">98 %+</b><span data-i18n="s5.r2.l">Taux de boucles stables</span></div>
+      <div><b class="num" data-i18n="s5.r3.v">-20 %</b><span data-i18n="s5.r3.l">Écart-type des variables régulées</span></div>
+      <div><b class="num" data-i18n="s5.r4.v">-80 %</b><span data-i18n="s5.r4.l">Nombre d'alarmes</span></div>
+    </div>
+    <div class="tablewrap">
+    <table class="case">
+      <caption style="text-align:left;color:#b7c6ce;font-size:.9rem;padding-bottom:.5rem" data-i18n="s5.case.t">Cas énergétique : consommation énergétique spécifique (kg équivalent pétrole / t, kgep/t)</caption>
+      <thead><tr><th data-i18n="s5.case.h1">Unité</th><th data-i18n="s5.case.h2">Avant</th><th data-i18n="s5.case.h3">Après</th></tr></thead>
+      <tbody>
+        <tr><td data-i18n="s5.case.u1">Unité de fractionnement des gaz n° 2</td><td class="n num">46.48</td><td class="n num after">42.03</td></tr>
+        <tr><td data-i18n="s5.case.u2">Unité d'hydrotraitement des résidus</td><td class="n num">17.55</td><td class="n num after">15.26</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p class="note" data-i18n="s5.case.n">Gain annuel global sur l'unité de fractionnement des gaz n° 2 : environ 11 millions de RMB.</p>
+    <div class="chips" style="margin:2rem 0 0">
+      <span class="chip" style="border-color:rgba(255,255,255,.3)" data-i18n="s5.ch1">Modélisation précise</span><span class="chip" style="border-color:rgba(255,255,255,.3)" data-i18n="s5.ch2">Contrôle précis</span><span class="chip" style="border-color:rgba(255,255,255,.3)" data-i18n="s5.ch3">Conception de la stratégie de contrôle</span><span class="chip" style="border-color:rgba(255,255,255,.3)" data-i18n="s5.ch4">Contrôle multivariable</span><span class="chip" style="border-color:rgba(255,255,255,.3)" data-i18n="s5.ch5">Diagnostic des défaillances</span>
+    </div>
+    <p class="note" data-i18n="s5.tech">Modélisation intelligente · PID à modèle interne intelligent · IMC / IMC-PID · commande multimodèle · découplage multivariable intelligent · commande prédictive multivariable (MPC) · régulation multi-objectifs sous contraintes multiples · conception de commande optimale · système expert · algorithme d'optimisation hybride élitiste</p>
+    <p class="note" data-i18n="s5.units">Unités concernées : éthylène, FCC, MTO/MTP et séparation des oléfines, purification des gaz, PP, PE, MEG, entre autres.</p>
+  </div>
+</section>
+
+<section class="proof" id="proof">
+  <div class="wrap">
+    <div class="head">
+      <div>
+        <h2 class="d" data-i18n="cred.title">Références et partenariats</h2>
+        <p class="muted" style="margin:.8rem 0 0" data-i18n="cred.kicker">Une capacité d'exécution vérifiable</p>
+      </div>
+      <ul class="creds">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="cred1">Qualification chinoise de grade II d'entreprise générale en ingénierie électronique et systèmes intelligents, avec permis de sécurité de production (Chine)</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="cred2">Certification des trois systèmes de management – qualité, environnement, santé-sécurité au travail (type ISO 9001 / 14001 / 45001)</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="cred3">Plus de 10 enregistrements de droits d'auteur logiciels (Chine) sur nos technologies clés</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="cred4">Centre de recherche conjoint avec l'Université du Zhejiang sur les équipements intelligents et le contrôle de la production des champs pétroliers et gaziers</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="cred5">Partenariat stratégique avec CITIC Kaicheng Heavy Industry, qui nous a accordé une autorisation de canal commercial pour le marché CNOOC</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="cred6">Certificat d'exploitant d'aéronefs civils sans équipage à bord (CAAC, Chine)</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="cred7">Robot antidéflagrant de reconnaissance et d'extinction incendie développé en interne ; principaux modèles titulaires de la certification antidéflagrante chinoise (Ex)</span></li>
+      </ul>
+    </div>
+    <p class="lbl" style="margin:2.5rem 0 0" data-i18n="proof.t">Certificats et qualifications</p>
+    <div class="certs">
+      <img src="../assets/cert-zju.jpg" alt="Zhejiang University joint research centre plaque">
+      <img src="../assets/cert-iso-1.jpg" width="150" height="200" alt="Quality management system certificate">
+      <img src="../assets/cert-iso-2.jpg" width="150" height="200" alt="Occupational health and safety management certificate">
+      <img src="../assets/cert-iso-3.jpg" width="150" height="200" alt="Environmental management system certificate">
+      <img src="../assets/cert-ex.jpg" width="150" height="200" alt="Explosion-proof conformity certificate">
+      <img src="../assets/cert-uav.jpg" width="150" height="200" alt="Civil UAV operator certificate">
+    </div>
+    <div class="mvv">
+      <div><h3 data-i18n="mvv.m.t">Mission</h3><p data-i18n="mvv.m.d">Un environnement de travail plus sûr et une collaboration homme-machine plus fluide pour l'industrie pétrochimique.</p></div>
+      <div><h3 data-i18n="mvv.v.t">Vision</h3><p data-i18n="mvv.v.d">La technologie au service de la montée en gamme de l'industrie.</p></div>
+      <div><h3 data-i18n="mvv.c.t">Valeurs</h3><p data-i18n="mvv.c.d">Spécialisation · innovation · coopération · fiabilité. Pas de solution imposée : du sur-mesure pour chaque client.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="global" id="global">
+  <div class="wrap">
+    <div>
+      <p class="lbl" data-i18n="glob.kicker">De Tianjin vers le Brésil, l'Amérique du Sud et le Moyen-Orient</p>
+      <h2 class="d" style="margin:.6rem 0 1rem" data-i18n="glob.title">Activité internationale</h2>
+      <p data-i18n="glob.p1">Arcotech déploie ses robots d'inspection antidéflagrants, ses stations de drones, sa maintenance prédictive et son contrôle intelligent IPC sur les marchés pétroliers et gaziers internationaux, en priorité au Brésil, en Amérique du Sud et au Moyen-Orient.</p>
+      <p data-i18n="glob.p2">Nous privilégions les partenariats avec des sociétés locales d'ingénierie, d'inspection et de surveillance de la sécurité, pour servir ensemble les projets des entreprises chinoises à l'étranger comme les opérateurs locaux, avec déploiement, formation et support de maintenance sur site.</p>
+      <div class="steps">
+        <div data-i18n="glob.s1">Partenaire local</div><div data-i18n="glob.s2">Déploiement et formation sur site</div><div data-i18n="glob.s3">Support de maintenance local</div>
+      </div>
+      <a class="btn primary" href="#contact" style="margin-top:2rem" data-i18n="glob.cta">Discuter d'un partenariat régional</a>
+    </div>
+    <svg class="route" viewBox="0 0 560 300" aria-hidden="true">
+      <circle class="ring" cx="470" cy="80" r="26"/><circle class="ring" cx="470" cy="80" r="40"/>
+      <path class="ln" d="M470 80 C390 30 300 40 240 120"/>
+      <path class="ln" d="M470 80 C360 150 220 160 120 210"/>
+      <path class="ln" d="M240 120 C210 160 170 190 120 210"/>
+      <circle class="hq" cx="470" cy="80" r="7"/>
+      <circle class="pt" cx="240" cy="120" r="6"/>
+      <circle class="pt" cx="120" cy="210" r="6"/>
+      <text x="470" y="134" text-anchor="middle" data-i18n="glob.hq">Siège de Tianjin</text>
+      <text x="470" y="152" text-anchor="middle" class="sm" data-i18n="glob.hq.d">Centre de R&D, de fabrication et de livraison</text>
+      <text x="240" y="100" text-anchor="middle" data-i18n="glob.me">Moyen-Orient</text>
+      <text x="240" y="82" text-anchor="middle" class="sm" data-i18n="glob.me.d">Région prioritaire de développement</text>
+      <text x="120" y="244" text-anchor="middle" data-i18n="glob.br">Rio de Janeiro · Brésil</text>
+      <text x="120" y="262" text-anchor="middle" class="sm" data-i18n="glob.br.d">Partenaire commercial international – Amérique latine et marchés lusophones</text>
+    </svg>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div>
+      <h2 class="d" data-i18n="contact.title">Contact</h2>
+      <p class="tag" data-i18n="contact.tag">L'intelligence artificielle au service d'opérations plus efficaces, d'un environnement de travail plus sûr et d'une collaboration homme-machine plus fluide.</p>
+    </div>
+    <div class="rows">
+      <div class="row"><span class="k" data-i18n="contact.addr.k">Adresse</span><span class="v" data-i18n="contact.addr.v">Bâtiment 14, EOD Headquarters, district de Dongli, Tianjin, Chine</span><span></span></div>
+      <div class="row"><span class="k" data-i18n="contact.tel.k">Téléphone</span><span class="v num" style="font-stretch:100%;font-weight:500">+86 133 1209 8502</span><button type="button" data-copy="+8613312098502" data-i18n="contact.copy">Copier</button></div>
+      <div class="row"><span class="k" data-i18n="contact.mail.k">E-mail</span><span class="v">meta@arcotech.cn</span><button type="button" data-copy="meta@arcotech.cn" data-i18n="contact.copy">Copier</button></div>
+    </div>
+  </div>
+</section>
+</main>
+<footer>
+  <div class="wrap">
+    <span><span data-i18n="footer.co">Arcotech (Tianjin) Co., Ltd.</span> · ARCOTECH</span>
+    <span>© 2026 · <span data-i18n="footer.rights">Tous droits réservés.</span></span>
+  </div>
+</footer>
+
+
+<script>
+document.getElementById('lang').addEventListener('change', function(e){
+  var l = e.target.value; var base = location.pathname.replace(/\/(en|pt|es|fr|no|ja|ko)\/?$/, '/').replace(/index\.html$/, '');
+  location.href = base + (l === 'zh' ? '' : l + '/');
+});
+document.querySelectorAll('button[data-copy]').forEach(function(btn){
+  btn.addEventListener('click', function(){
+    var txt = btn.getAttribute('data-copy'), orig = btn.textContent;
+    var done = function(){ btn.textContent = 'Copié'; setTimeout(function(){ btn.textContent = orig; }, 1600); };
+    var fallback = function(){ var v = btn.parentElement.querySelector('.v'); var r = document.createRange(); r.selectNodeContents(v); var s = window.getSelection(); s.removeAllRanges(); s.addRange(r); };
+    if(navigator.clipboard && navigator.clipboard.writeText){ navigator.clipboard.writeText(txt).then(done).catch(fallback); } else fallback();
+  });
+});
+</script>
+</body>
+</html>
